@@ -1,6 +1,18 @@
 public class PatternsJava {
 
     public static void Hollow_Rectangle(int row, int col) {
+        /*
+         * * * * * * * *
+         * *
+         * *
+         * *
+         * *
+         * *
+         * *
+         * *
+         * *
+         * * * * * * *
+         */
         for (int i = 1; i <= row; i++) {
             for (int j = 1; j <= col; j++) {
                 if (i == 1 || i == row || j == 1 || j == col) {
@@ -14,6 +26,11 @@ public class PatternsJava {
     }
 
     public static void Inverted_Rotated_Half_Pyramid(int n) {
+        // *
+        // * *
+        // * * *
+        // * * * *
+        // * * * * *
         for (int i = 1; i <= n; i++) {
             // Spaces
             for (int j = 1; j <= n - i; j++) {
@@ -28,6 +45,12 @@ public class PatternsJava {
     }
 
     public static void Inverted_Half_Pyramid_with_Numbers(int n) {
+        // 1 2 3 4 5 6
+        // 1 2 3 4 5
+        // 1 2 3 4
+        // 1 2 3
+        // 1 2
+        // 1
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= n - i + 1; j++) {
                 System.out.print(j + " ");
@@ -37,6 +60,11 @@ public class PatternsJava {
     }
 
     public static void FLOYD_Triangle(int n) {
+        // 1
+        // 2 3
+        // 4 5 6
+        // 7 8 9 10
+        // 11 12 13 14 15
         int num = 1;
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= i; j++) {
@@ -48,6 +76,11 @@ public class PatternsJava {
     }
 
     public static void zero_one_Triangle(int n) {
+/*          1
+            01
+            101
+            0101
+*/         10101
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= i; j++) {
                 if ((i + j) % 2 == 0) {
