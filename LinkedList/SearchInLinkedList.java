@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class searchInLL {
+public class SearchInLinkedList {
 
     public static int recursiveSearch(LinkedList<Integer> ll, int indx, int element) {
         // recursive search

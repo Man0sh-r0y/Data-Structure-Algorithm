@@ -1,4 +1,4 @@
-public class CycleLL {
+public class Cycle_Checking_in_LinkedList {
 
     static class Node {
         int data;
