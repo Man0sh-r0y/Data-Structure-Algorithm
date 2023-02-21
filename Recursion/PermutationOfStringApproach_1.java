@@ -1,8 +1,9 @@
 import java.io.*;
 import java.util.*;
 
-class Solution {
-    private void recurPermute(int index, int[] nums, List<List<Integer>> ans) {
+class PermutationOfStringApproach_1 {
+
+    public static void recurPermute(int index, int[] nums, List<List<Integer>> ans) {
         if (index == nums.length) {
             // copy the ds to ans
             List<Integer> ds = new ArrayList<>();
@@ -19,24 +20,21 @@ class Solution {
         }
     }
 
-    private void swap(int i, int j, int[] nums) {
+    public static void swap(int i, int j, int[] nums) {
         int t = nums[i];
         nums[i] = nums[j];
         nums[j] = t;
     }
 
-    public List<List<Integer>> permute(int[] nums) {
+    public static List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> ans = new ArrayList<>();
         recurPermute(0, nums, ans);
         return ans;
     }
-};
 
-class PermutationOfStringApproach_1 {
     public static void main(String[] args) {
         int nums[] = { 1, 2, 3 };
-        Solution sol = new Solution();
-        List<List<Integer>> ls = sol.permute(nums);
+        List<List<Integer>> ls = permute(nums);
         System.out.println("All Permutations are");
         for (int i = 0; i < ls.size(); i++) {
             for (int j = 0; j < ls.get(i).size(); j++) {
