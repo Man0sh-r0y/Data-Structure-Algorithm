@@ -69,8 +69,8 @@ public class SwapNodes {
         int x = 2;
         int y = 4;
         // I have to swap this 2 nodes (2nd node and 4th node)
-        printLinkedList(first);
+        printLinkedList(first); // 1->2->3->4->null
         swapNodes(first, x, y);
-        printLinkedList(first);
+        printLinkedList(first); // 1->4->3->2->null
     }
 }
