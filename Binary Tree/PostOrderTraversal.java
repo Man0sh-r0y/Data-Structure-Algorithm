@@ -1,4 +1,4 @@
-public class PreOrderTraverse {
+public class PostOrderTraversal {
 
     static class Node {
         int data;
@@ -12,13 +12,12 @@ public class PreOrderTraverse {
         }
     }
 
-    public static void preOrder(Node root) {
+    public static void postOrder(Node root) {
         if (root == null)
             return;
-
+        postOrder(root.left);
+        postOrder(root.right);
         System.out.print(root.data + " ");
-        preOrder(root.left);
-        preOrder(root.right);
     }
 
     public static void main(String[] args) {
@@ -38,6 +37,6 @@ public class PreOrderTraverse {
         rightChildrn.left = rightLeftChildrn;
         rightChildrn.right = rightRightChildrn;
 
-        preOrder(root);
+        postOrder(root);
     }
 }
