@@ -23,20 +23,12 @@ public class PreOrderTraverse {
 
     public static void main(String[] args) {
         Node root = new Node(1);
-        Node leftChildrn = new Node(2);
-        Node rightChildrn = new Node(3);
-        root.left = leftChildrn;
-        root.right = rightChildrn;
-
-        Node leftLeftChildrn = new Node(4);
-        Node leftRightChildrn = new Node(5);
-        leftChildrn.left = leftLeftChildrn;
-        leftChildrn.right = leftRightChildrn;
-
-        Node rightLeftChildrn = new Node(7);
-        Node rightRightChildrn = new Node(8);
-        rightChildrn.left = rightLeftChildrn;
-        rightChildrn.right = rightRightChildrn;
+        root.left = new Node(2);
+        root.right = new Node(3);
+        root.left.left = new Node(4);
+        root.left.right = new Node(5);
+        root.right.left = new Node(6);
+        root.right.right = new Node(7);
 
         preOrder(root);
     }
