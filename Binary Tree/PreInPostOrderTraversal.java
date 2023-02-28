@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class PreInPostOrderTraversalUsingRecursion {
+public class PreInPostOrderTraversal {
 
     static class Node {
         int data;
