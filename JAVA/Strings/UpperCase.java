@@ -21,6 +21,6 @@ public class UpperCase {
     public static void main(String args[]) {
         String str = "hi, i am manash";
         String UppercaseStr = toUpperCase(str);
-        System.out.println(UppercaseStr);
+        System.out.println(UppercaseStr); // Hi, I Am Manash
     }
 }
