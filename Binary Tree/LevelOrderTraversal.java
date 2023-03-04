@@ -1,7 +1,3 @@
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.ArrayList;
-
 public class LevelOrderTraversal {
 
     static class Node {
@@ -16,31 +12,36 @@ public class LevelOrderTraversal {
         }
     }
 
-    public static ArrayList<ArrayList<Integer>> levelOder(Node root) {
-        Queue<Node> q = new LinkedList<>();
-        ArrayList<ArrayList<Integer>> result = new ArrayList<>();
+    public static void printLevelOrder(Node root) {
+        int h = height(root);
 
+        for (int i = 1; i <= h; i++) {
+            printCurrentLevel(root, i);
+        }
+    }
+
+    public static int height(Node root) {
         if (root == null) {
-            return result;
+            return 0;
         }
 
-        q.add(root);
-        while (!q.isEmpty()) {
-            int size = q.size();
-            ArrayList<Integer> temp = new ArrayList<>();
-            for (int i = 0; i < size; i++) {
-                if (q.peek().left != null) {
-                    q.add(q.peek().left);
-                }
-                if (q.peek().right != null) {
-                    q.add(q.peek().right);
-                }
-                temp.add(q.remove().data);
-            }
-            result.add(temp);
+        int leftHeight = height(root.left);
+        int rightHeight = height(root.right);
+
+        return 1 + Math.max(leftHeight, rightHeight);
+    }
+
+    public static void printCurrentLevel(Node root, int level) {
+        if (root == null) {
+            return;
         }
 
-        return result;
+        if (level == 1) {
+            System.out.print(root.data + " ");
+        } else if (level > 1) {
+            printCurrentLevel(root.left, level - 1);
+            printCurrentLevel(root.right, level - 1);
+        }
     }
 
     public static void main(String[] args) {
@@ -52,7 +53,6 @@ public class LevelOrderTraversal {
         root.right.left = new Node(6);
         root.right.right = new Node(7);
 
-        System.out.println(levelOder(root));
-
+        printLevelOrder(root);
     }
 }
