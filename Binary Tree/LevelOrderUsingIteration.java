@@ -16,6 +16,8 @@ public class LevelOrderUsingIteration {
         }
     }
 
+    // [Method-1]: In this method, the each level is divied in each ArrayList and
+    // these arraylist are stored in a result arraylis
     public static ArrayList<ArrayList<Integer>> levelOder(Node root) {
         Queue<Node> q = new LinkedList<>();
         ArrayList<ArrayList<Integer>> result = new ArrayList<>();
@@ -43,6 +45,25 @@ public class LevelOrderUsingIteration {
         return result;
     }
 
+    // [Method-2]: Here each level isn't divied in the result ArrayList.
+    // Just printing according to the level order
+    public static ArrayList<Integer> levelOrderTraversal(Node root) {
+        ArrayList<Integer> result = new ArrayList<>();
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
+        // level order traversal
+        while (!q.isEmpty()) {
+            Node currNode = q.remove();
+            if (currNode == null) {
+                continue;
+            }
+            result.add(currNode.data);
+            q.add(currNode.left);
+            q.add(currNode.right);
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
         Node root = new Node(1);
         root.left = new Node(2);
@@ -52,7 +73,8 @@ public class LevelOrderUsingIteration {
         root.right.left = new Node(6);
         root.right.right = new Node(7);
 
-        System.out.println(levelOder(root));
+        System.out.println(levelOder(root)); // [[1], [2, 3], [4, 5, 6, 7]]
+        System.out.println(levelOrderTraversal(root));// [1, 2, 3, 4, 5, 6, 7]
 
     }
 }
