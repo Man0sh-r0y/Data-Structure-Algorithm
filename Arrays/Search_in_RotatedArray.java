@@ -13,15 +13,15 @@ public class Search_in_RotatedArray {
         }
     }
 
-    public static int search(int arr[], int left, int right, int target) {
-        while (left <= right) {
-            int mid = (left + right) / 2;
+    public static int search(int arr[], int low, int high, int target) {
+        while (low <= high) {
+            int mid = (low + high) / 2;
             if (arr[mid] == target) {
                 return mid;
             } else if (target < arr[mid]) {
-                right = mid - 1;
+                high = mid - 1;
             } else if (target > arr[mid]) {
-                left = mid + 1;
+                low = mid + 1;
             }
         }
         return -1;
@@ -29,20 +29,20 @@ public class Search_in_RotatedArray {
 
     // index of min element in sorted rotated Array
     public static int minindex(int arr[]) {
-        int left = 0;
-        int right = arr.length - 1;
-        while (left <= right) {
-            int mid = (left + right) / 2;
+        int low = 0;
+        int high = arr.length - 1;
+        while (low <= high) {
+            int mid = (low + high) / 2;
             if (mid > 0 && arr[mid - 1] > arr[mid]) {
                 return mid;
-            } else if (left <= arr[mid] && arr[mid] > arr[right]) {
-                left = mid + 1;
+            } else if (low <= arr[mid] && arr[mid] > arr[high]) {
+                low = mid + 1;
             } else {
-                right = mid - 1;
+                high = mid - 1;
             }
 
         }
-        return left;
+        return low;
     }
 
     public static void main(String args[]) {
