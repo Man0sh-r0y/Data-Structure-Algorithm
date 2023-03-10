@@ -17,6 +17,9 @@ public class LongestCommonPrefix {
             }
             if (flag == strs.length) {
                 result.append(commonPrefix.charAt(commonPrefix.length() - 1));
+                // Every time substring is getting created (commonPrefix)
+                // But we need the last char of every substring
+                // (to avoid to store same char many times)
             } else {
                 return result.toString();
             }

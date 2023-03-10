@@ -20,20 +20,22 @@ public class MergeTwoSortedList {
 
     public static ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         ListNode prehead = new ListNode(-1);
-        ListNode cur = prehead;
+        ListNode currNode = prehead;
 
         while (list1 != null && list2 != null) {
             if (list1.val <= list2.val) {
-                cur.next = list1;
+                currNode.next = list1;
                 list1 = list1.next;
             } else {
-                cur.next = list2;
+                currNode.next = list2;
                 list2 = list2.next;
             }
-            cur = cur.next;
+            currNode = currNode.next;
         }
 
-        cur.next = list1 == null ? list2 : list1;
+        currNode.next = list1 == null ? list2 : list1;
+        // if size differs in both list then remaining part of the list
+        // will be assingned in currNode.next
         return prehead.next;
     }
 
