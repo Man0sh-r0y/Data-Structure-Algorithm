@@ -14,13 +14,13 @@ public class CheckingUnbalancedBinaryTree {
 
     // the approach is if it's balanced binary tree then it will return the height
     // if it's not then it'll return -1
-    public static int checkifBalanced(Node root) {
+    public static int checkIfBalanced(Node root) {
         if (root == null) {
             return 0;
         }
 
-        int leftHeight = checkifBalanced(root.left);
-        int rightHeight = checkifBalanced(root.right);
+        int leftHeight = checkIfBalanced(root.left);
+        int rightHeight = checkIfBalanced(root.right);
 
         if (leftHeight == -1 || rightHeight == -1) {
             // If any of them returns -1 then whole tree isn't balanced
@@ -44,7 +44,7 @@ public class CheckingUnbalancedBinaryTree {
         root.left.right = new Node(5);
         root.left.left.left = new Node(8);
 
-        if (checkifBalanced(root) == -1) {
+        if (checkIfBalanced(root) == -1) {
             System.out.println("Binary Tree isn't Balanced");
         } else {
             System.out.println("Binary Tree is Balanced");

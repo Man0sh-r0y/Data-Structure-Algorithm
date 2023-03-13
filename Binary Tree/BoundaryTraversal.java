@@ -19,16 +19,13 @@ public class BoundaryTraversal {
     public static Queue<Integer> result = new LinkedList<>();
 
     public static boolean isLeafNode(Node node) {
-        if (node.left == null && node.right == null) {
-            return true;
-        }
-        return false;
+        return node.left == null && node.right == null;
     }
 
     public static void addLeftBoundary(Node root) {
         Node currNode = root.left;
         while (currNode != null) {
-            if (isLeafNode(currNode) == false) {
+            if (!isLeafNode(currNode)) {
                 result.add(currNode.data);
             }
             if (currNode.left != null) {
@@ -44,7 +41,7 @@ public class BoundaryTraversal {
         Node currNode = root.right;
         Stack<Node> s = new Stack<>();
         while (currNode != null) {
-            if (isLeafNode(currNode) == false) {
+            if (!isLeafNode(currNode)) {
                 s.push(currNode);
             }
             if (currNode.right != null) {
