@@ -164,6 +164,8 @@ public class _03_ImplementingHashMap {
         map.put("US", 200);
         map.put("Nepal", 300);
         map.put("Japan", 100);
+        map.put("Chaina", 100);
+        map.put("Pakistan", 100);
 
         ArrayList<String> keys = map.keySet();
         for (String key : keys) {
