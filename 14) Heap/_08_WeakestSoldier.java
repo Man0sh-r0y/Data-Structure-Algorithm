@@ -1,6 +1,6 @@
 import java.util.PriorityQueue;
 
-public class WeakestSoldier {
+public class _08_WeakestSoldier {
 
     static class Row implements Comparable<Row> {
         int countSoldier;// in every row how many soldier are there

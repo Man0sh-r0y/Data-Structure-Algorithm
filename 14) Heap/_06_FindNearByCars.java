@@ -1,6 +1,6 @@
 import java.util.PriorityQueue;
 
-public class FindNearByCars {
+public class _06_FindNearByCars {
 
     static class Point implements Comparable<Point> {// To comapre class object while storing in PQ
         int x;// x axis coordinate

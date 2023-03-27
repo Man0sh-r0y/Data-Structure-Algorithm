@@ -1,6 +1,6 @@
 import java.util.PriorityQueue;
 
-public class ConnectNropes {
+public class _07_ConnectNropes {
 
     public static int findCostToConnectRopes(int[] ropes) {
         int cost = 0;

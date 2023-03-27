@@ -1,4 +1,4 @@
-public class HeapSort {
+public class _05_HeapSort {
 
     // Heapify for max heap
     public static void heapify(int[] arr, int indx, int size) {// parameter has the index of the root element

@@ -1,6 +1,6 @@
 import java.util.PriorityQueue;
 
-public class SlidingWindowMaximum {
+public class _09_SlidingWindowMaximum {
 
     static class Pair implements Comparable<Pair> {
         // pair in array value with their index

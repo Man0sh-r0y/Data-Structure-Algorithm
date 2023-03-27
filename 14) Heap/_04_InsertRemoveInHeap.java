@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class InsertRemoveInHeap {
+public class _04_InsertRemoveInHeap {
 
     public static class Heap {
         ArrayList<Integer> heap = new ArrayList<>();

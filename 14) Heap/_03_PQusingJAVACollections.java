@@ -1,6 +1,6 @@
 import java.util.PriorityQueue;
 
-public class PQusingJAVACollections {
+public class _03_PQusingJAVACollections {
     // I have to prioritize student based on their rank
     // To compare student class object, I have to use a special type of interface
     // here student class is using interface called comparable using implements

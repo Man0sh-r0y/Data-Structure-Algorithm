@@ -1,6 +1,6 @@
 import java.util.PriorityQueue;
 
-public class AscendingOrderPriorityQueues {
+public class _01_AscendingOrderPriorityQueues {
     public static void main(String[] args) {
         PriorityQueue<Integer> pq = new PriorityQueue<>();// Ascending Order Priority Queue
         pq.add(3);// O(logn) Time complexity
@@ -9,7 +9,7 @@ public class AscendingOrderPriorityQueues {
         pq.add(1);
         pq.add(4);
 
-        while(!pq.isEmpty()){
+        while (!pq.isEmpty()) {
             System.out.println(pq.peek());// O(1) time cimplexity
             pq.remove();
         }
