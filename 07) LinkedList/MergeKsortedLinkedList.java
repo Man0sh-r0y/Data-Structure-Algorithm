@@ -1,4 +1,5 @@
-import java.util.Scanner;
+import java.util.Collections;
+import java.util.ArrayList;
 
 // We have K sorted linked lists of size N each, merge them and print the sorted output.
 public class MergeKsortedLinkedList {
@@ -13,63 +14,58 @@ public class MergeKsortedLinkedList {
         }
     }
 
-    // creating using LinkedList using Recursion
-    public static Node createLinkedList(int N) {
-        // creating linkedlist of N nodes
-        if (N <= 0) {
-            return null;
-        }
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the data for Node : ");
-        int data = sc.nextInt();
-        Node head = new Node(data);
-        head.next = createLinkedList(N - 1);
-        return head;
-    }
-
-    public static void mergeLinkedList(Node arr[]) {
-        for (int i = 0; i < arr.length - 1; i++) {
-            Node temp = arr[i];
-            while (temp.next != null) {
-                temp = temp.next;
+    public static Node mergeLinkedList(Node[] lists) {
+        ArrayList<Integer> arraylist = new ArrayList<>();// All the Node's data will be stored here
+        // Storing all the Node's datas into ArrayList
+        for (int i = 0; i < lists.length; i++) {
+            while (lists[i] != null) {
+                arraylist.add(lists[i].data);
+                lists[i] = lists[i].next;
             }
-            temp.next = arr[i + 1];
         }
+        Collections.sort(arraylist);
+        Node head = new Node(-1);// new LinkedList creation
+        // inistializing head of new LinkedList with -1
+        // so LinkedList will start from head.next
+        Node temp = head;
+        for (int i = 0; i < arraylist.size(); i++) {
+            temp.next = new Node(arraylist.get(i));
+            temp = temp.next;
+        }
+        return head.next;
     }
 
-    // printing linkedlist
     public static void printLinkedList(Node head) {
-        if (head == null) {
-            System.out.println("LinkedList is Empty.");
-            return;
-        }
         Node temp = head;
-        while (temp != null) {
+        while (temp.next != null) {
             System.out.print(temp.data + "->");
             temp = temp.next;
         }
-        System.out.println("null");
+        System.out.println(temp.data);
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter The Number of LinkedList");
-        int k = sc.nextInt();
-        System.out.println("Enter the Number of The nodes in each LinkedList: ");
-        int N = sc.nextInt();
+        // LinkedList 1
+        Node head1 = new Node(1);
+        head1.next = new Node(5);
+        head1.next.next = new Node(4);
+        // LinkedList 2
+        Node head2 = new Node(2);
+        head2.next = new Node(3);
+        head2.next.next = new Node(6);
+        // LinkedList 3
+        Node head3 = new Node(7);
+        head3.next = new Node(9);
+        head3.next.next = new Node(8);
+        // I have to merge k sorted LinkedList (here k=3)
+        // The answear LinkedList should be in sorted order
+        // Answear would be : 1->2->3->4->5->6->7->8->9
+        int k = 3;// Number of the LinkedList
+        Node[] lists = new Node[k];
+        lists[0] = head1;
+        lists[1] = head2;
+        lists[2] = head3;
 
-        Node arr[] = new Node[k]; // creating an array of LinkedList
-        // k is the number of linkedlist
-
-        for (int i = 0; i < k; i++) {
-            // creating k numbers of LinkedLists
-            System.out.println("-------Create LinkedList " + (i + 1) + "-------");
-            arr[i] = createLinkedList(N);
-        }
-
-        mergeLinkedList(arr);// merging LinkedList
-        printLinkedList(arr[0]); // Printing them
-
-        sc.close();
+        printLinkedList(mergeLinkedList(lists));
     }
 }
