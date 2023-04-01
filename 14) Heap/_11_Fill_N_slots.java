@@ -12,25 +12,30 @@ public class _11_Fill_N_slots {
             q.add(arr[i]);// adding element
             visitedElement[arr[i]] = true;// visited marked
         }
-        // Level Orde Traversal Method
+        // Level Order Traversal Method
         while (!q.isEmpty()) {
             int size = q.size();
+            boolean isAdded = false;// if adjacent alement will be added then it'll be true
             for (int i = 0; i < size; i++) {
                 int curr = q.remove();
                 // adding left adjacent element
                 if (curr - 1 >= 1 && !visitedElement[curr - 1]) {
                     visitedElement[curr - 1] = true;
+                    isAdded = true;// element added that' why it's true
                     q.add(curr - 1);
                 }
                 // adding right adjacent element
                 if (curr + 1 <= N && !visitedElement[curr + 1]) {
                     visitedElement[curr + 1] = true;
+                    isAdded = true;// element added that' why it's true
                     q.add(curr + 1);
                 }
             }
-            time++;
+
+            if (isAdded)// if adjacent element added then only time will be incremented
+                time++;
         }
-        return time - 1;
+        return time;
     }
 
     public static void main(String[] args) {
