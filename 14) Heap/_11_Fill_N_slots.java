@@ -12,9 +12,9 @@ public class _11_Fill_N_slots {
             q.add(arr[i]);// adding element
             visitedElement[arr[i]] = true;// visited marked
         }
-        // Level Orde Traversal Method
+        // Level Order Traversal Method
         while (!q.isEmpty()) {
-            int size = q.size();
+            int size =+919674829343 q.size();
             for (int i = 0; i < size; i++) {
                 int curr = q.remove();
                 // adding left adjacent element
