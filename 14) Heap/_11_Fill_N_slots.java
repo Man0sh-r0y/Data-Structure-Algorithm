@@ -14,7 +14,7 @@ public class _11_Fill_N_slots {
         }
         // Level Order Traversal Method
         while (!q.isEmpty()) {
-            int size =+919674829343 q.size();
+            int size = q.size();
             for (int i = 0; i < size; i++) {
                 int curr = q.remove();
                 // adding left adjacent element
