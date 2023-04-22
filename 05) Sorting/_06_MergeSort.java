@@ -1,4 +1,4 @@
-public class MergeSort {
+public class _06_MergeSort {
     public static void printArr(int arr[]) {
         for (int i = 0; i < arr.length; i++) {
             System.out.println(arr[i] + " ");
