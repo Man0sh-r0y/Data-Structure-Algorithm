@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class linkedList {
+public class _01_linkedList {
 
     class Node {
         int data;
@@ -117,7 +117,7 @@ public class linkedList {
     }
 
     public static void main(String[] args) {
-        linkedList ll = new linkedList();
+        _01_linkedList ll = new _01_linkedList();
         Scanner sc = new Scanner(System.in);
         while (true) {
             System.out.println("Enter your Choice:-");

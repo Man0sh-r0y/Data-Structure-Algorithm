@@ -2,7 +2,7 @@ import java.util.*;
 
 // We have an integer k and a queue of integers,
 // we need to reverse the order of the first k elements of the queue, leaving the other elements in the same relative order
-public class _15_Reversing_1st_K_Elements_in_Queue {
+public class _15_Reversing1stKElements {
 
     public static void reverse(Queue<Integer> q, int k) {
         Stack<Integer> s = new Stack<>();
