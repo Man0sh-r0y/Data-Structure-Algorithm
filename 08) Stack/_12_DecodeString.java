@@ -13,7 +13,7 @@ import java.util.*;
 // Sample Output 2
 // : bvvbvvbvv
 
-public class DecodeString {
+public class _12_DecodeString {
 
     public static String decode(String str) {
         Stack<Character> s = new Stack<>();

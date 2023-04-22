@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class FindNextGreater {
+public class _08_FindNextGreater {
 
     public static void nextGreater(int arr[], int next_Greater[]) {
         // we will staart array traversing from last

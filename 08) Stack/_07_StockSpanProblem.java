@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class StockSpanProblem {
+public class _07_StockSpanProblem {
 
     public static void StockSpan(Stack<Integer> s, int stocks[], int span[]) {
         // we have to store the previous high index into the array
@@ -12,7 +12,7 @@ public class StockSpanProblem {
             // while pushing we will check if our current pushing element is greater than or
             // equal to stack top then. we will pop from stack
             while (!s.isEmpty() && currPrice >= stocks[s.peek()]) {
-                int val = s.pop();
+                s.pop();
             }
             // calculate span for each stock
             if (s.isEmpty()) {

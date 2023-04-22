@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class DuplicateParenthesis {
+public class _10_DuplicateParenthesis {
 
     public static boolean duplicateParenthesis(String str) {
         Stack<Character> s = new Stack<>();

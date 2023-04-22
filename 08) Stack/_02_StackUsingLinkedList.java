@@ -1,4 +1,4 @@
-public class StackUsingLinkedList {
+public class _02_StackUsingLinkedList {
 
     public static class node { // creating linkedlist node
         int data;
@@ -53,7 +53,7 @@ public class StackUsingLinkedList {
     }
 
     public static void main(String[] args) {
-        StackUsingLinkedList s = new StackUsingLinkedList();
+        _02_StackUsingLinkedList s = new _02_StackUsingLinkedList();
         s.push(1);
         s.push(2);
         s.push(3);

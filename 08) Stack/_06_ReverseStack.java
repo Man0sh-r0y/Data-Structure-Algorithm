@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class ReverseStack {
+public class _06_ReverseStack {
 
     public static void pushAtBottom(Stack<Integer> s, int data) {
         if (s.isEmpty()) {

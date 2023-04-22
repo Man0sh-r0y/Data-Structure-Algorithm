@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class TrappingRainWater {
+public class _14_TrappingRainWater {
 
     public static Stack<Integer> findLeftMax(int height[]) {
         Stack<Integer> s = new Stack<>();

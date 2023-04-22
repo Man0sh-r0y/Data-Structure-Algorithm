@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class LinkedListPalindromeChecking {
+public class _13_LinkedListPalindromeChecking {
 
     public static boolean isPalindrome(LinkedList<Character> ll) {
         Stack<Character> s = new Stack<>();

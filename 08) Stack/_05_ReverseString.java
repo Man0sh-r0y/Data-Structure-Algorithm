@@ -1,6 +1,6 @@
 import java.util.Stack;
 
-public class ReverseString {
+public class _05_ReverseString {
 
     public static String reverse(Stack<Character> s, String str) {
         int indx = 0;

@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class CheckingValidParenthesis {
+public class _09_CheckingValidParenthesis {
 
     public static boolean isMatch(char a, char b) {
         if (a == '(' && b == ')') {

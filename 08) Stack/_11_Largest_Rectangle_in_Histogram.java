@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Largest_Rectangle_in_Histogram {
+public class _11_Largest_Rectangle_in_Histogram {
 
     public static int[] nextLeftSmallest(int arr[]) {
         int nextLeft_smallest[] = new int[arr.length];

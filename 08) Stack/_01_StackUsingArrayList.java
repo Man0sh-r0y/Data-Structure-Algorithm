@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class StackUsingArrayList {
+public class _01_StackUsingArrayList {
 
     static ArrayList<Integer> list = new ArrayList<>();
 
@@ -29,7 +29,7 @@ public class StackUsingArrayList {
     }
 
     public static void main(String[] args) {
-        StackUsingArrayList s = new StackUsingArrayList();
+        _01_StackUsingArrayList s = new _01_StackUsingArrayList();
         s.push(1);
         s.push(2);
         s.push(3);
