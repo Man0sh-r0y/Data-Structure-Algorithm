@@ -1,4 +1,4 @@
-public class OddEvenChecking {
+public class _02_OddEvenChecking {
 
     public static void OddEven(int n) {
         int bitMask = 1;

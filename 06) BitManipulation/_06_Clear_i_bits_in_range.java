@@ -1,4 +1,4 @@
-public class Clear_i_bits_in_range {
+public class _06_Clear_i_bits_in_range {
 
     public static int clearIBitsinRange(int n, int i, int j) {
         int a = ((~0) << (j + 1));

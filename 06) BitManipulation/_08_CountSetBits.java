@@ -1,4 +1,4 @@
-public class CountSetBits {
+public class _08_CountSetBits {
     public static int countSetBits(int n) {
         int count = 0;
         while (n > 0) {

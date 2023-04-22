@@ -1,4 +1,4 @@
-public class Change_ith_bit {
+public class _09_Change_ith_bit {
 
     public static int setIthBit(int n, int i) {
         int bitMask = 1 << i;

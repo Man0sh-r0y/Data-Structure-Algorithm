@@ -1,4 +1,4 @@
-public class BitWiseOperator {
+public class _01_BitWiseOperator {
     public static void main(String args[]) {
         // AND Operator
         System.out.println(5 & 6);

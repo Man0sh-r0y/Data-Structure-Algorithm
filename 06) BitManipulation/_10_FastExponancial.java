@@ -1,4 +1,4 @@
-public class FastExponancial {
+public class _10_FastExponancial {
     public static int fastExpo(int a, int n) {
         int ans = 1;
         while (n > 0) {
