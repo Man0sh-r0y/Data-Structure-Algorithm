@@ -1,4 +1,4 @@
-public class Trapped_Rain_Water {
+public class _07_Trapped_Rain_Water {
     public static int trappedWater(int height[]) {
         int n = height.length;
         int leftMax[] = new int[n];// left boundary

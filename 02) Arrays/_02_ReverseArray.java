@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class reverseArray {
+public class _02_ReverseArray {
 
     public static void arrayInput(int arr[]) {
         Scanner sc = new Scanner(System.in);

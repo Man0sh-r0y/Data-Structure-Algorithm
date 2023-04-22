@@ -1,8 +1,8 @@
 import java.util.*;
 
-public class SubArray {
+public class _04_pairsInArray {
 
-    public static void arrayInput(int arr[]) {
+    public static void arrayInput(int arr[]) { // Array Element input
         Scanner sc = new Scanner(System.in);
         for (int i = 0; i < arr.length; i++) {
             System.out.print("Enter the Element " + (i + 1) + ": ");
@@ -10,15 +10,10 @@ public class SubArray {
         }
     }
 
-    public static void printSubArrays(int arr[]) {
-        // print subarrays
+    public static void pairsInArray(int arr[]) {
         for (int i = 0; i < arr.length; i++) {
             for (int j = i + 1; j < arr.length; j++) {
-                for (int k = i; k <= j; k++) {
-                    System.out.print(arr[k] + ",");
-                }
-                System.out.print("\b");
-                System.out.print("  ");
+                System.out.print("(" + arr[i] + "," + arr[j] + ") ");
             }
             System.out.println();
         }
@@ -26,10 +21,12 @@ public class SubArray {
 
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter the size of the array: ");
+        System.out.print("Enter the size of array: ");
         int n = sc.nextInt();
         int arr[] = new int[n];
+        // Array Element input
         arrayInput(arr);
-        printSubArrays(arr);
+        // Pairs in Array
+        pairsInArray(arr);
     }
 }

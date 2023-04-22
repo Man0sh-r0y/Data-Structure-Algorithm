@@ -1,4 +1,4 @@
-public class Buy_Sell_Stocks {
+public class _08_Buy_Sell_Stocks {
 
     public static int buy_sell_Stocks(int price[]) {
         int buyPrice = Integer.MAX_VALUE;

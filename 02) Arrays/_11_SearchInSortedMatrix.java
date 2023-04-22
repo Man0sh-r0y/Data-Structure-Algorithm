@@ -1,4 +1,4 @@
-public class SearchInSortedMatrix {
+public class _11_SearchInSortedMatrix {
 
     public static void stairCaseSearch(int matrix[][], int element) {
         int n = matrix.length, m = matrix[0].length;

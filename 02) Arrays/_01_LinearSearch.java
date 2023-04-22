@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class LinearSearch {
+public class _01_LinearSearch {
 
     public static int linearSearch(int arr[], int searchElement) {
         for (int i = 0; i < arr.length; i++) {

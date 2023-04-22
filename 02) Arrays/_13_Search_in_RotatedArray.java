@@ -1,4 +1,4 @@
-public class Search_in_RotatedArray {
+public class _13_Search_in_RotatedArray {
 
     public static int search(int arr[], int target) {
         int min = minindex(arr);

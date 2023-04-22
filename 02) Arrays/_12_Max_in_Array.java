@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Max_in_Array {
+public class _12_Max_in_Array {
 
     public static void arrayInput(int arr[]) {
         Scanner sc = new Scanner(System.in);

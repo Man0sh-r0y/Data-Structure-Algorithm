@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class MaxSumSubArray {
+public class _06_MaxSumSubArray {
 
     public static void printSubArrays(int arr[]) {
         // print subarrays

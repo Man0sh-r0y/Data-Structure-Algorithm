@@ -1,4 +1,4 @@
-public class DiagonalSum {
+public class _10_DiagonalSum {
 
     // 1st approach
     public static int diagonalSum(int matrix[][]) {

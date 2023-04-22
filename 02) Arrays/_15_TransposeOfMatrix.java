@@ -1,4 +1,4 @@
-public class TransposeOfMatrix {
+public class _15_TransposeOfMatrix {
 
     public static void transposeOfMatrix(int matrix[][]) {
         int n = matrix.length, m = matrix[0].length;

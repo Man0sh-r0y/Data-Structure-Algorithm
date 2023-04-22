@@ -1,4 +1,4 @@
-public class SumOf2ndRowIn2DArray {
+public class _14_SumOf2ndRowIn2DArray {
     public static void main(String args[]) {
         int nums[][] = { { 1, 4, 9 }, { 11, 4, 3 }, { 2, 2, 3 } };
         int sum = 0;

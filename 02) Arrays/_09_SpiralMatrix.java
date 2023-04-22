@@ -1,4 +1,4 @@
-public class SpiralMatrix {
+public class _09_SpiralMatrix {
 
     public static void printSpiralMatrix(int matrix[][]) {
         int startRow = 0, startCol = 0;

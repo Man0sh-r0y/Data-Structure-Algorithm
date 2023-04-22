@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Binary_Search {
+public class _03_Binary_Search {
 
     public static void bubbleSort(int arr[]) {
         boolean preSorted = true;
