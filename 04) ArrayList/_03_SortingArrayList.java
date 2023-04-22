@@ -1,7 +1,7 @@
 import java.util.*;
 import java.util.Collections;
 
-public class sortingArrayList {
+public class _03_SortingArrayList {
     public static void main(String args[]) {
         ArrayList<Integer> list = new ArrayList<>();
         list.add(5);

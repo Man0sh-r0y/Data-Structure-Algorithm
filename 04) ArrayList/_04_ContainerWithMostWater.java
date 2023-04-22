@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class containerWithMostWater {
+public class _04_ContainerWithMostWater {
 
     public static int storeWater(ArrayList<Integer> height) {// Brute Force
         int maxWater = 0;

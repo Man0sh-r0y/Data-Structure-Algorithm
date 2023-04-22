@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class pairSum2 {
+public class _07_pairSum2 {
 
     public static boolean pairSum(ArrayList<Integer> list, int target) {
         int bp = -1;// Breaking Point

@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class ArrayListMethods {
+public class _01_ArrayListMethods {
 
     public static void swap(ArrayList<Integer> list, int indx1, int indx2) {
         int temp = list.get(indx1);

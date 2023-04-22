@@ -1,13 +1,20 @@
-import java.util.*;
+import java.util.ArrayList;
 
-public class pairSum1 {
+public class _08_pairSum1_2PointerApproarch {
 
     public static boolean pairSum(ArrayList<Integer> list, int target) {
-        for (int i = 0; i < list.size(); i++) {
-            for (int j = i + 1; j < list.size(); j++) {
-                if (list.get(i) + list.get(j) == target) {
-                    return true;
-                }
+        int lp = 0;
+        int rp = list.size() - 1;
+        while (lp != rp) {
+            // Case1
+            if (list.get(lp) + list.get(rp) == target) {
+                return true;
+            }
+            // Case 2
+            if (list.get(lp) + list.get(rp) < target) {
+                lp++;
+            } else { // Case 3
+                rp--;
             }
         }
         return false;

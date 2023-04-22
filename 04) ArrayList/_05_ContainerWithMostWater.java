@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Container_With_Most_Water {
+public class _05_ContainerWithMostWater {
     // Optimized Solution
     public static int storeWater(ArrayList<Integer> height) {// Two Pointer Approach
         int maxWater = 0;
