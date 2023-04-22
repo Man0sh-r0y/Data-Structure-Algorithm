@@ -1,4 +1,4 @@
-public class InsertionSort {
+public class _03_InsertionSort {
     public static void Insertion_Sort(int arr[]) {
         for (int i = 1; i < arr.length; i++) {
             int curr = arr[i];// Current Index

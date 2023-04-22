@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Collections;
 
-public class inbuiltSort {
+public class _04_inbuiltSort {
 
     public static void printArray(int arr[]) {
         for (int i = 0; i < arr.length; i++) {

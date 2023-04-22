@@ -1,4 +1,4 @@
-public class selectionSort {
+public class _02_selectionSort {
 
     public static void SelectionSort(int arr[]) {
         int n = arr.length;

@@ -1,4 +1,4 @@
-public class countSort {
+public class _05_countSort {
 
     public static void CountSort(int arr[]) {
         int largest = Integer.MIN_VALUE;
