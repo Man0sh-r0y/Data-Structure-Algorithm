@@ -1,7 +1,7 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Interleave2HalfOfQueue {
+public class _08_Interleave2HalfOfQueue {
 
     public static void interLeave(Queue<Integer> q) {
         Queue<Integer> fisrtHalf = new LinkedList<>();

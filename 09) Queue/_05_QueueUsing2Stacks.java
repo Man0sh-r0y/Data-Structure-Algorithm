@@ -1,6 +1,6 @@
 import java.util.Stack;
 
-public class QueueUsing2Stacks {
+public class _05_QueueUsing2Stacks {
 
     public static Stack<Integer> s1 = new Stack<>();
     public static Stack<Integer> s2 = new Stack<>();

@@ -2,7 +2,7 @@ import java.util.*;
 
 //Given a number N.
 // The task is to generate and print all binary numbers with decimal values from 1 to N
-public class GenerateBinaryNumbers {
+public class _14_GenerateBinaryNumbers {
 
     public static Queue<Integer> reverse(Queue<Integer> q) {
         Stack<Integer> s = new Stack<>();

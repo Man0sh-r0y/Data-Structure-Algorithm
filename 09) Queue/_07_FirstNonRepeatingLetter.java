@@ -1,7 +1,7 @@
 import java.util.Queue;
 import java.util.LinkedList;
 
-public class FirstNonRepeatingLetter {
+public class _07_FirstNonRepeatingLetter {
 
     public static char findFirstNonRepeatingLetter(String str) {
         Queue<Character> q = new LinkedList<>();

@@ -2,7 +2,7 @@ import java.util.Queue;
 import java.util.LinkedList;
 import java.util.Stack;
 
-public class ReverseQueue {
+public class _09_ReverseQueue {
 
     public static void reverse(Queue<Integer> q) {
         Stack<Integer> s = new Stack<>();

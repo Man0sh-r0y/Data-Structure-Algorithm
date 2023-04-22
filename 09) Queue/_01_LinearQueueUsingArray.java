@@ -1,4 +1,4 @@
-public class LinearQueueUsingArray {
+public class _01_LinearQueueUsingArray {
 
     static int arr[];
     static int front = -1, rear = -1;// initially front & rear is -1

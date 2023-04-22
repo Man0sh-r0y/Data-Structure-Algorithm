@@ -1,7 +1,7 @@
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class SlidingWindowMaximum {
+public class _13_SlidingWindowMaximum {
 
     public static int[] maxSlidingWindow(int[] arr, int k) {
         if (arr == null || k <= 0) {

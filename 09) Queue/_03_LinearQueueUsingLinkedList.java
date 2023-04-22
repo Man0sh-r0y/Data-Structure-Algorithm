@@ -1,4 +1,4 @@
-public class LinearQueueUsingLinkedList {
+public class _03_LinearQueueUsingLinkedList {
 
     static class Node {
         int data;

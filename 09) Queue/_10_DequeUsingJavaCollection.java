@@ -1,7 +1,7 @@
 import java.util.Deque;
 import java.util.LinkedList;
 
-public class DequeUsingJavaCollection {
+public class _10_DequeUsingJavaCollection {
     public static void main(String[] args) {
         Deque<Integer> q = new LinkedList<>();
         q.addFirst(2);

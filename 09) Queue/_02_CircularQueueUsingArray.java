@@ -1,4 +1,4 @@
-public class CircularQueueUsingArray {
+public class _02_CircularQueueUsingArray {
 
     static int arr[];
     static int front = -1, rear = -1;// initially front & rear is -1

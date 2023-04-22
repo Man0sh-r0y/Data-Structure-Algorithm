@@ -1,7 +1,7 @@
 import java.util.Deque;
 import java.util.LinkedList;
 
-public class StackUsingDeque {
+public class _11_StackUsingDeque {
 
     public static Deque<Integer> q = new LinkedList<>();
 
