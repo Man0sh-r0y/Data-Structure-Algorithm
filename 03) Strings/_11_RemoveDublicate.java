@@ -1,4 +1,4 @@
-public class RemoveDublicate {
+public class _11_RemoveDublicate {
 
     public static String removeDublicate(String str) {
         StringBuilder result = new StringBuilder("");

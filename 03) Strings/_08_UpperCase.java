@@ -1,4 +1,4 @@
-public class UpperCase {
+public class _08_UpperCase {
 
     public static String toUpperCase(String str) {
         StringBuilder sb = new StringBuilder("");

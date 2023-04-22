@@ -1,4 +1,4 @@
-public class largestNum {
+public class _06_largestNum {
     public static void main(String args[]) {
         String fruits[] = { "apple", "mango", "banana" };
         String largest = fruits[0];

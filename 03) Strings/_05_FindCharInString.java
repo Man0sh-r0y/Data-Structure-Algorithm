@@ -1,4 +1,4 @@
-public class FindCharInString {
+public class _05_FindCharInString {
     public static void main(String[] args) {
         String txt = "Please locate";
         System.out.println(txt.indexOf("locate")); // Outputs 7

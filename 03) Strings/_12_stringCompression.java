@@ -1,4 +1,4 @@
-public class stringCompression {
+public class _12_stringCompression {
 
     public static String Compress(String str) {
         String newStr = "";

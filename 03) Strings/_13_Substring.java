@@ -1,4 +1,4 @@
-public class substring {
+public class _13_Substring {
 
     public static String SubString(String str, int startIndx, int endIndx) {
         String substr = "";

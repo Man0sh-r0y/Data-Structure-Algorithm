@@ -1,4 +1,4 @@
-public class charAtMethod {
+public class _01_charAtMethod {
 
     public static void printLetters(String str) {
         for (int i = 0; i < str.length(); i++) {
