@@ -1,6 +1,6 @@
 // We have a linkedlist and two keys in it,swap nodes for two given keys
 
-public class SwapNodes {
+public class _06_SwapNodes {
 
     static class Node {
         int data;

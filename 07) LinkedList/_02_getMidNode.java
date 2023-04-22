@@ -1,6 +1,6 @@
 import java.util.LinkedList;
 
-public class getMidNode {
+public class _02_getMidNode {
     public static void main(String[] args) {
         // Using JAVA Collection
         LinkedList<Integer> ll = new LinkedList<>();

@@ -1,4 +1,4 @@
-public class IntersectionOf2LinkedList {
+public class _10_IntersectionOf2LinkedList {
 
     static class Node {
         int data;

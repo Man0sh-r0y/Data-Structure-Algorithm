@@ -1,7 +1,7 @@
 // We have a LinkedList of integers,write a function to modify the linkedlist such that all even numbers appear before all the odd numbers in the modified linkedlist. 
 // Also,keep the order of even and odd numbers same
 
-public class OddEvenLinkedList {
+public class _13_OddEvenLinkedList {
 
     static class Node {
         int data;

@@ -1,4 +1,4 @@
-public class Delete_N_nodes_after_M_nodes {
+public class _11_DeleteNnodesAfterMnodes {
 
     static class Node {
         int data;

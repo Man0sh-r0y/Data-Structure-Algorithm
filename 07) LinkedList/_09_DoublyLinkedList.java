@@ -1,4 +1,4 @@
-public class DoublyLinkedList {
+public class _09_DoublyLinkedList {
 
     class Node {
         int data;
@@ -99,7 +99,7 @@ public class DoublyLinkedList {
     }
 
     public static void main(String[] args) {
-        DoublyLinkedList ll = new DoublyLinkedList();
+        _09_DoublyLinkedList ll = new _09_DoublyLinkedList();
         ll.addFirst(1);
         ll.addFirst(0);
         ll.addLast(2);

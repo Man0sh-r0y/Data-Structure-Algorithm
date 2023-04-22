@@ -1,4 +1,4 @@
-public class ZigzagLinkedList {
+public class _07_ZigzagLinkedList {
 
     static class Node {
         int data;
@@ -71,7 +71,7 @@ public class ZigzagLinkedList {
     }
 
     public static void main(String[] args) {
-        ZigzagLinkedList ll = new ZigzagLinkedList();
+        _07_ZigzagLinkedList ll = new _07_ZigzagLinkedList();
         ll.addLast(1);
         ll.addLast(2);
         ll.addLast(3);

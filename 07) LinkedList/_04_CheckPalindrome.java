@@ -1,4 +1,4 @@
-public class CheckPalindrome {
+public class _04_CheckPalindrome {
     static class Node {
         int data;
         Node next;

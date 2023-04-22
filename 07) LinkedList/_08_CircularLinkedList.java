@@ -1,4 +1,4 @@
-public class CircularLinkedList {
+public class _08_CircularLinkedList {
 
     static class Node {
         int data;

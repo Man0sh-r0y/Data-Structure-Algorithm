@@ -2,7 +2,7 @@ import java.util.Collections;
 import java.util.ArrayList;
 
 // We have K sorted linked lists of size N each, merge them and print the sorted output.
-public class MergeKsortedLinkedList {
+public class _12_MergeKsortedLinkedList {
 
     static class Node {
         int data;
