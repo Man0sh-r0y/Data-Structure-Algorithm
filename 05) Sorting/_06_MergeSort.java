@@ -10,7 +10,7 @@ public class _06_MergeSort {
         if (si >= ei) {
             return;
         }
-        // kaam
+
         int mid = si + (ei - si) / 2;// (si + ei)/2
         mergeSort(arr, si, mid);// left part
         mergeSort(arr, mid + 1, ei);// right part
