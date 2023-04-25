@@ -96,7 +96,7 @@ public class _03_FractionalKnapsack {
             int currWeight = (int) myItem.weight;// weight of the current object
             int currValue = (int) myItem.value;// value of the current object
 
-            if (capacity - currWeight >= 0) {// Unitill the knapsack is getting filled
+            if (capacity - currWeight >= 0) {// Untill the knapsack is getting filled
                 capacity = capacity - currWeight;// Items are put into the knapsack and that much amount weight is
                 // deducted from knapsack
                 totalProfit += currValue;// The Item which has been put into the knapsack, the value of that Item is
