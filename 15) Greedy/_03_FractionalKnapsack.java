@@ -66,10 +66,10 @@ public class _03_FractionalKnapsack {
     }
 
     public static double fractionalKnapsack(int[] weight, int[] value, int capacity) {
-        Items[] items = new Items[weight.length];// I made a array named 'items' which can store Items types object
+        Items[] items = new Items[weight.length];// I made an array named 'items' which can store Items types object
         // Filling array with Item objects
         for (int i = 0; i < items.length; i++) {
-            items[i] = new Items(weight[i], value[i], i);// Item types object are stored
+            items[i] = new Items(weight[i], value[i]);// Item types object are stored
         }
         // Sorting the Array in decending order based on their value per unit weight
         // (value / weight)
