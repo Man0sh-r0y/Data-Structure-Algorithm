@@ -22,8 +22,9 @@ public class _03_FractionalKnapsack {
      * 
      * (iv) To get the maximum value into the knapsack, I have to follow one way
      * 
-     * (v) I'll calculate the value per unit weight (value / weight) of each item.
-     * For that I can have those items which has more value
+     * (v) Atfirst I'll create Item class which can create objects with give values
+     * and weights. I'll calculate the value per unit weight (value / weight) of
+     * each item. For that I can have those items which has more value.
      * 
      * (vi) So at first I'll make Item objects with the given values and weights
      * 
@@ -56,6 +57,7 @@ public class _03_FractionalKnapsack {
      * 
      */
 
+    // Creating Item class which can create objects with given values and weights
     static class Items {// Item object is being created
         double weight, value;
 
@@ -67,12 +69,12 @@ public class _03_FractionalKnapsack {
 
     public static double fractionalKnapsack(int[] weight, int[] value, int capacity) {
         Items[] items = new Items[weight.length];// I made an array named 'items' which can store Items types object
-        // Filling array with Item objects
+        // Step 1: Filling array with Item objects
         for (int i = 0; i < items.length; i++) {
             items[i] = new Items(weight[i], value[i]);// Item types object are stored
         }
-        // Sorting the Array in decending order based on their value per unit weight
-        // (value / weight)
+        // Step 2: Sorting the Array in decending order based on their value per unit
+        // weight (value / weight)
         Arrays.sort(items, new Comparator<Items>() {
             @Override
             public int compare(Items item1, Items item2) {
@@ -89,7 +91,7 @@ public class _03_FractionalKnapsack {
         });
 
         double totalProfit = 0d;// as it's a double value so 0d is written
-        // Traverse over Array element and put the Item object into knapsack
+        // Step 3: Traverse over Array element and put the Item object into knapsack
         for (Items myItem : items) {
             int currWeight = (int) myItem.weight;// weight of the current object
             int currValue = (int) myItem.value;// value of the current object
