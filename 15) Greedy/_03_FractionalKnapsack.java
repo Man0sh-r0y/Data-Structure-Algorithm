@@ -59,7 +59,7 @@ public class _03_FractionalKnapsack {
     static class Items {// Item object is being created
         double weight, value;
 
-        Items(int weight, int value, int index) {
+        Items(int weight, int value) {
             this.weight = weight;
             this.value = value;
         }
