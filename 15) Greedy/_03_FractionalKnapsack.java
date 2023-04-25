@@ -89,7 +89,7 @@ public class _03_FractionalKnapsack {
         });
 
         double totalProfit = 0d;// as it's a double value so 0d is written
-
+        // Traverse over Array element and put the Item object into knapsack
         for (Items myItem : items) {
             int currWeight = (int) myItem.weight;// weight of the current object
             int currValue = (int) myItem.value;// value of the current object
