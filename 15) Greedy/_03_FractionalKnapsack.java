@@ -11,8 +11,8 @@ public class _03_FractionalKnapsack {
     // Approach:
 
     /*
-     * (i) I've been given the weight and value array of some items. Thw weights and
-     * values of those items are in this array.
+     * (i) I've been given the weights and values in the array form of some items.
+     * The weights and values of those items are in this array.
      * 
      * (ii) I have been given a knapsack with a capacity. I have to fill the
      * knapsack with these items.
