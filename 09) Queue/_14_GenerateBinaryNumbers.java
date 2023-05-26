@@ -36,7 +36,7 @@ public class _14_GenerateBinaryNumbers {
 
     public static void main(String[] args) {
         int N = 5;
-        generateBinaryNumbers(N);
+        generateBinaryNumbers(N);// Generating Binary Number from 1 to N
         // Ans: 1, 10, 11, 100, 101
     }
 }

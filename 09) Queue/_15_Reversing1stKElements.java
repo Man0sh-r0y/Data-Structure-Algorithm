@@ -4,7 +4,7 @@ import java.util.*;
 // we need to reverse the order of the first k elements of the queue, leaving the other elements in the same relative order
 public class _15_Reversing1stKElements {
 
-    public static void reverse(Queue<Integer> q, int k) {
+    public static void reverse(Queue<Integer> q, int k) {// Reversing 1st K elements
         Stack<Integer> s = new Stack<>();
 
         int size = q.size();
