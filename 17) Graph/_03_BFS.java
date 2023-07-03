@@ -41,7 +41,7 @@ public class _03_BFS {
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();// adjacency list of graph
         // At dirst I have to check if the graph is 1 based indexing or not
         // if it's 1 based index then:
-        for (int i = 0; i <= V + 1; i++)
+        for (int i = 1; i <= V + 1; i++)
             adj.add(new ArrayList<Integer>());
 
         // adding edges of the graph

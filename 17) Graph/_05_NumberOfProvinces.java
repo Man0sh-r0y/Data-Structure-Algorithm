@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class NumberOfProvinces {
+public class _05_NumberOfProvinces {
 
     // creating adjacency list by adding edges
     public static void addEdge(ArrayList<ArrayList<Integer>> adj, int u, int v) {
