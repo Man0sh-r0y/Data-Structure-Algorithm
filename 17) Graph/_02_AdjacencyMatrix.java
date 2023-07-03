@@ -1,4 +1,4 @@
-public class _02_UndirectedGraphRepresentation {
+public class _02_AdjacencyMatrix {
     // To store Graph Nodes we will follow Adjacency Matrix Approach
     public static void main(String[] args) {
         int n = 3, m = 3;// n = number of Nodes, m = number of edges

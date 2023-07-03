@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class BFS {
+public class _03_BFS {
 
     // make adjacency list of graph
     // adding an en edge of an undirected graph
@@ -26,7 +26,7 @@ public class BFS {
             int node = q.poll(); // popping the node
             bfs.add(node);
             for (Integer it : adj.get(node)) {// As these are 1 based indexing graph so node index is equal to the value
-                                              // of the node
+                // of the node
                 if (!visited[it]) {
                     visited[it] = true;
                     q.add(it);
@@ -44,7 +44,7 @@ public class BFS {
         for (int i = 0; i <= V + 1; i++)
             adj.add(new ArrayList<Integer>());
 
-        // adding edges to the graph
+        // adding edges of the graph
         addEdge(adj, 1, 2);
         addEdge(adj, 1, 3);
         addEdge(adj, 2, 4);

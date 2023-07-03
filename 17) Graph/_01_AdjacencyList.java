@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class _01_UndirectedGraphRepresentation {
+public class _01_AdjacencyList {
 
     // To store Graph Nodes we will follow List Adjacency Approach
     public static void main(String[] args) {
