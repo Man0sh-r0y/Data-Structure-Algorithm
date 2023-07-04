@@ -13,19 +13,8 @@ public class _06_NumberOfIslands {
         }
     }
 
-    public static int NumOfIslands(int[][] grid, boolean[][] visited) {
-        int row = grid.length;
-        int col = grid[0].length;
-        int count = 0;
-        for (int i = 0; i < row; i++) {
-            for (int j = 0; j < col; j++) {
-                if (!visited[i][j] && grid[i][j] == 1) {
-                    BFS(i, j, grid, visited);
-                    count++;
-                }
-            }
-        }
-        return count; // number of islands
+    public static boolean checkBoundaryCondition(int row, int col, int n, int m) {
+        return row >= 0 && row < n && col >= 0 && col < m; // if true then return true otherwise false
     }
 
     public static void BFS(int row, int col, int[][] grid, boolean[][] visited) {
@@ -44,14 +33,28 @@ public class _06_NumberOfIslands {
                 for (int delCol = -1; delCol <= 1; delCol++) {
                     int nRow = currRow + delRow; // nRow => Neighbour Row
                     int nCol = currCol + delCol; // nCol => Neighbour Column
-                    if (nRow >= 0 && nRow < n && nCol >= 0 && nCol < m && grid[nRow][nCol] == 1
-                            && !visited[nRow][nCol]) {
+                    if (checkBoundaryCondition(nRow, nCol, n, m) && grid[nRow][nCol] == 1 && !visited[nRow][nCol]) {
                         visited[nRow][nCol] = true;
                         q.add(new Pair(nRow, nCol));
                     }
                 }
             }
         }
+    }
+
+    public static int NumOfIslands(int[][] grid, boolean[][] visited) {
+        int row = grid.length;
+        int col = grid[0].length;
+        int count = 0;
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                if (!visited[i][j] && grid[i][j] == 1) {
+                    BFS(i, j, grid, visited);
+                    count++;
+                }
+            }
+        }
+        return count; // number of islands
     }
 
     public static void main(String[] args) {

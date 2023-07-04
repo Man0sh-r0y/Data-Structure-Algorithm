@@ -12,7 +12,6 @@ public class _03_BFS {
     }
 
     public static ArrayList<Integer> bfs(int V, ArrayList<ArrayList<Integer>> adj) {
-        // Code here
         Queue<Integer> q = new LinkedList<>();
         boolean[] visited = new boolean[V + 1]; // size will be equal to (the number of nodes +1)
         // as it's a 1 based indexing graph and arraylist is 0 based indexing
@@ -25,11 +24,11 @@ public class _03_BFS {
         while (!q.isEmpty()) {
             int node = q.poll(); // popping the node
             bfs.add(node);
-            for (Integer it : adj.get(node)) {// As these are 1 based indexing graph so node index is equal to the value
-                // of the node
-                if (!visited[it]) {
-                    visited[it] = true;
-                    q.add(it);
+            for (Integer adjNode : adj.get(node)) {// As these are 1 based indexing graph so node index is equal to the
+                // value of the node
+                if (!visited[adjNode]) {
+                    visited[adjNode] = true;
+                    q.add(adjNode);
                 }
             }
         }

@@ -16,17 +16,17 @@ public class _05_NumberOfProvinces {
     public static void DFS(int node) {
         visited[node] = true; // as it's a 1 based indexing graph so (node index = node value)
         // as example 1 node will stored at index 1
-        for (Integer it : adj.get(node)) {
-            if (!visited[it])
-                DFS(it);
+        for (Integer adjNode : adj.get(node)) {
+            if (!visited[adjNode])// if adjacent node isn't visited
+                DFS(adjNode);
         }
     }
 
     public static int checkProvinces() {
         int count = 0;// number of the provinces
-        for (int i = 1; i <= V; i++) {// as it's 1 based indexing graph
-            if (!visited[i]) {
-                DFS(i);
+        for (int node = 1; node <= V; node++) {// as it's 1 based indexing graph
+            if (!visited[node]) {
+                DFS(node);
                 count++;
             }
         }

@@ -13,9 +13,9 @@ public class _04_DFS {
         visited[node] = true; // as it's a 1 based indexing graph so (node index = node value)
         // as example 1 node will stored at index 1
         dfs.add(node);
-        for (Integer it : adj.get(node)) {
-            if (!visited[it])
-                DFS(it, dfs, adj, visited);
+        for (Integer adjNode : adj.get(node)) {
+            if (!visited[adjNode])
+                DFS(adjNode, dfs, adj, visited);
         }
     }
 
