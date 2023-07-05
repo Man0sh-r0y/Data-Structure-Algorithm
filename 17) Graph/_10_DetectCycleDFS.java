@@ -1,8 +1,6 @@
 import java.util.ArrayList;
-import java.util.Queue;
-import java.util.LinkedList;
 
-public class _09_DetectCycleBFS {
+public class _10_DetectCycleDFS {
 
     static class Pair {
         int node, parentNode;
@@ -22,34 +20,23 @@ public class _09_DetectCycleBFS {
         adj.get(v).add(u);
     }
 
-    public static boolean detectCycle(int startNode) {// BFS method
-        Queue<Pair> q = new LinkedList<>();
-        q.add(new Pair(startNode, -1)); // starting node does not have any parent
-        visited[startNode] = true;
-
-        while (!q.isEmpty()) {
-            int node = q.peek().node;
-            int parentNode = q.peek().parentNode;
-            q.remove();
-
-            for (Integer adjNode : adj.get(node)) {// adjacent node
-                if (!visited[adjNode]) {
-                    visited[adjNode] = true;
-                    q.add(new Pair(adjNode, node)); // adjacent node's parent is 'node'
-                } else if (parentNode != adjNode) {
+    public static boolean detectCycle(int node, int parentNode) {// DFS method
+        visited[node] = true;
+        for (Integer adjNode : adj.get(node)) {// adjacent Node
+            if (!visited[adjNode]) {
+                if (detectCycle(adjNode, node))// 'node' is parent of 'adjacent node'
                     return true;
-                }
+                else if (parentNode != adjNode)
+                    return true;
             }
         }
         return false;
     }
 
     public static boolean isCycle(int startNode) {
-        // If graph is connected component
         for (int node = startNode; node <= V; node++) {
-            if (!visited[node]) {
-                if (detectCycle(node))
-                    return true;
+            if (detectCycle(node, -1)) {// starting node does not have any parent
+                return true;
             }
         }
         return false;
@@ -73,7 +60,6 @@ public class _09_DetectCycleBFS {
 
         int startNode = 1;
 
-        // check cycle
         System.out.println(isCycle(startNode));
     }
 }
