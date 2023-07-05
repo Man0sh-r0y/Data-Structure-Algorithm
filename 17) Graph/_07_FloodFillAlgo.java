@@ -33,8 +33,8 @@ public class _07_FloodFillAlgo {
                 { 2, 2, 2 }
         };
 
-        int[] delRow = { -1, 0, +1, 0 };
-        int[] delCol = { 0, +1, 0, -1 };
+        int[] delRow = { -1, 0, +1, 0 };// change in row while moving to upper, right, bottom, left
+        int[] delCol = { 0, +1, 0, -1 };// change in col while moving to upper, right, bottom, left
 
         // starting grid position = grid[2][0]
         dfs(grid, 2, 0, 3, 2, delRow, delCol);
