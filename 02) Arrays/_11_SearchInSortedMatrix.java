@@ -2,26 +2,22 @@ public class _11_SearchInSortedMatrix {
 
     public static void stairCaseSearch(int matrix[][], int element) {
         int n = matrix.length, m = matrix[0].length;
-        int i = 0, j = m - 1;
+        int row = 0, col = m - 1;
         boolean elementFound = false;
-        while (j >= 0 && i < n) {
-            if (element == matrix[i][j]) {
-                System.out.println("Element Found at " + i + "," + j + " index");
+
+        while (col >= 0 && row < n) {
+            if (element == matrix[row][col]) {
+                System.out.println("Element Found at (" + row + "," + col + ") index");
                 elementFound = true;
                 break;
             }
             // go left
-            else if (element < matrix[i][j]) {
-                j--;
-            }
+            else if (element < matrix[row][col]) col--;
             // go down
-            else if (element > matrix[i][j]) {
-                i++;
-            }
+            else if (element > matrix[row][col]) row++;
         }
-        if (!elementFound) {
-            System.out.println("Element not Found");
-        }
+        
+        if (!elementFound) System.out.println("Element not Found");
     }
 
     public static void main(String args[]) {

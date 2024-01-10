@@ -2,23 +2,10 @@ import java.util.*;
 
 public class _12_Max_in_Array {
 
-    public static void arrayInput(int arr[]) {
-        Scanner sc = new Scanner(System.in);
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print("Enter the element " + (i + 1) + ": ");
-            arr[i] = sc.nextInt();
-        }
-    }
-
     public static int findMax(int arr[]) {
         int MAX = Integer.MIN_VALUE;
-        for (int i = 0; i < arr.length; i++) {
-            if (MAX < arr[i]) {
-                MAX = arr[i];
-            }
-            // Another Way---->
-            // MAX = Math.max(MAX, arr[i]);
-        }
+        for (int i = 0; i < arr.length; i++)
+            MAX = Math.max(MAX, arr[i]);    
         return MAX;
     }
 
@@ -27,7 +14,11 @@ public class _12_Max_in_Array {
         System.out.print("Enter the size of Array: ");
         int n = sc.nextInt();
         int arr[] = new int[n];
-        arrayInput(arr);
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print("Enter the element " + (i + 1) + ": ");
+            arr[i] = sc.nextInt();
+        }
         System.out.println("Maximum in Array is " + findMax(arr));
+        sc.close();
     }
 }
