@@ -13,20 +13,23 @@ public class _03_Binary_Search {
     // 8. If the search element is not found then return -1
     // 9. Repeat the steps 3 to 8 until the element is found or the start is less than or equal to the end
 
+    public static void swap(int arr[], int i, int j) {
+        if (i == j) return;
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
     public static void bubbleSort(int arr[]) {
         boolean preSorted = true;
         for (int i = 0; i < arr.length - 1; i++) {
-            for (int j = i + 1; j < arr.length; j++) {
-                if (arr[i] > arr[i + 1]) {
-                    int temp = arr[i];
-                    arr[i] = arr[i + 1];
-                    arr[i + 1] = temp;
+            for (int j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    swap(arr, j, j + 1);
                     preSorted = false;
                 }
             }
-            if (preSorted) {
-                break;
-            }
+            if (preSorted) break;
         }
     }
 
@@ -34,13 +37,9 @@ public class _03_Binary_Search {
         int start = 0, end = arr.length - 1;
         while (start <= end) {
             int mid = (start + end) / 2;
-            if (arr[mid] == searchElement) {
-                return mid;
-            } else if (searchElement < arr[mid]) {
-                end = mid - 1;
-            } else if (searchElement > arr[mid]) {
-                start = mid + 1;
-            }
+            if (arr[mid] == searchElement) return mid;
+            else if (searchElement < arr[mid]) end = mid - 1;
+            else if (searchElement > arr[mid]) start = mid + 1;
         }
         return -1;
     }
@@ -50,19 +49,23 @@ public class _03_Binary_Search {
         System.out.print("Enter the size of Array: ");
         int n = sc.nextInt();
         int arr[] = new int[n];
+
         for (int i = 0; i < arr.length; i++) {
             System.out.print("Enter Element " + (i + 1) + ": ");
             arr[i] = sc.nextInt();
         }
-        bubbleSort(arr);
+        bubbleSort(arr); // Sort the array
+        System.out.println("Sorted Array: " + Arrays.toString(arr));
+
         System.out.print("Enter the element you want to search: ");
         int searchElement = sc.nextInt();
         int searchIndex = binarySearch(arr, searchElement);
-        if (searchIndex == -1) {
+
+        if (searchIndex == -1)
             System.out.println("Element could not found");
-        } else {
+        else
             System.out.println("Element found at index " + searchIndex);
-        }
+
         sc.close();
     }
 }
