@@ -2,20 +2,6 @@ import java.util.*;
 
 public class _06_MaxSumSubArray {
 
-    public static void printSubArrays(int arr[]) {
-        // print subarrays
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = i + 1; j < arr.length; j++) {
-                for (int k = i; k <= j; k++) {
-                    System.out.print(arr[k] + ",");
-                }
-                System.out.print("\b");
-                System.out.print("  ");
-            }
-            System.out.println();
-        }
-    }
-
     public static int maxSum(int arr[]) {// Brute Force
         int MAX_SUM = Integer.MIN_VALUE;
         for (int i = 0; i < arr.length; i++) {
@@ -74,9 +60,10 @@ public class _06_MaxSumSubArray {
             System.out.print("Enter Array Element " + (i + 1) + ": ");
             arr[i] = sc.nextInt();
         }
-        printSubArrays(arr);
+    
         System.out.println("Maximum of SubArray is " + maxSum(arr));
         System.out.println("Maximum of SubArray is " + prefixSum(arr));
         System.out.println("Maximum of SubArray is " + kadanesRule(arr));
+        sc.close();
     }
 }
