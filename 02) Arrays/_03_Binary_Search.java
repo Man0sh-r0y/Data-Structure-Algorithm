@@ -3,7 +3,7 @@ import java.util.*;
 public class _03_Binary_Search {
 
     // LOGIC
-    // 1. Sort the array
+    // 1. Sort the array (any sorting algo or use Arrays.sort())
     // 2. while sorting check if the array is already sorted
     // 3. Find the middle element of the array
     // 4. Compare the middle element with the search element
