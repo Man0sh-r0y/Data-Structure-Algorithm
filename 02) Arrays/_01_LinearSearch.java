@@ -1,5 +1,10 @@
 import java.util.*;
 
+// LOGIC
+// 1. Search Array element by comparing each of elements of the given array
+// 2. If element found return the index of the element otherwise return -1
+// 3. Time Complexity: O(n)
+
 public class _01_LinearSearch {
 
     public static int linearSearch(int arr[], int searchElement) {
