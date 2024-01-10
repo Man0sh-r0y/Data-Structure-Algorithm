@@ -1,8 +1,8 @@
 public class _08_Buy_Sell_Stocks {
 
     public static int buy_sell_Stocks(int price[]) {
-        int buyPrice = Integer.MAX_VALUE;
-        int maxProfit = 0;
+        int buyPrice = Integer.MAX_VALUE, maxProfit = 0;
+        
         for (int i = 0; i < price.length; i++) {
             if (buyPrice < price[i]) {
                 int profit = price[i] - buyPrice;
