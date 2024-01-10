@@ -1,4 +1,6 @@
+
 public class _16_SearchInRotatedArray {
+    
     public static int search(int arr[], int tar, int si, int ei) {
         if (si > ei) {
             return -1;
