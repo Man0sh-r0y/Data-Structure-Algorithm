@@ -1,6 +1,5 @@
-package _02_String;
 
-public class StringBuilderClassMethods {
+public class _00_StringBuilderClassMethods {
 
     public static StringBuilder stringBuilderConstructor(String str) {
         return new StringBuilder(str); // return a StringBuilder object initialized with the given string

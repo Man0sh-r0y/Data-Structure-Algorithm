@@ -1,5 +1,3 @@
-package _01_Arrays;
-
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
@@ -17,7 +15,7 @@ class Student {
     }
 }
 
-public class ArraysClassMethods {
+public class _00_ArraysClassMethods {
     public static List<String> arrayToList(String[] arr){
         List<String> list = Arrays.asList(arr);
         return list;

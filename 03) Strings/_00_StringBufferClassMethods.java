@@ -1,6 +1,5 @@
-package _02_String;
 
-public class StringBufferClassMethods {
+public class _00_StringBufferClassMethods {
     public static StringBuffer stringBufferConstructor(String str) {
         return new StringBuffer(str); // return a StringBuffer object initialized with the given string
     }

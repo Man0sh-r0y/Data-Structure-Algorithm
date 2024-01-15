@@ -1,6 +1,5 @@
-package _02_String;
 
-public class StringClassMethods {
+public class _00_StringClassMethods {
     public static String charArrayToString(char[] array) {
         return new String(array); // allocates a String from a given char array
     }
