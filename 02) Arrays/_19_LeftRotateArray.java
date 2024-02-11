@@ -1,11 +1,9 @@
-import java.util.* ;
-import java.io.*; 
-
+import java.util.Arrays;
 
 public class _19_LeftRotateArray {
 
     public static int[] rotateArray(int[] arr, int n) {
-      if(arr.length == 1) return arr;
+      if(n == 1) return arr;
 
       int firstElement = arr[0];
 
