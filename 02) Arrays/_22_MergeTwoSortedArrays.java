@@ -10,36 +10,36 @@ public class _22_MergeTwoSortedArrays {
     return false;
   }
 
-  public static List< Integer > sortedArray(int []a, int []b) {
+  public static List< Integer > sortedArray(int []a, int []b) { // 2 pointer approach
     ArrayList<Integer> ans = new ArrayList<>();
-    int indx1 = 0, indx2 = 0;
+    int i = 0, j = 0;
 
-    while(indx1 < a.length && indx2 < b.length) {
-      if(a[indx1] <= b[indx2]) {
-        if(matchLastElement(ans, a[indx1])) // if this current element already exits in the arraylist
-          indx1++; // in this case we will not add any duplicate element to our ans list
+    while(i < a.length && j < b.length) {
+      if(a[i] <= b[j]) {
+        if(matchLastElement(ans, a[i])) // if this current element already exits in the arraylist
+          i++; // in this case we will not add any duplicate element to our ans list
         else 
-          ans.add(a[indx1++]); // add the element to our ans list
+          ans.add(a[i++]); // add the element to our ans list
       } else {
-        if(matchLastElement(ans, b[indx2])) // if this current element already exits in the arraylist
-          indx2++; // in this case we will not add any duplicate element to our ans list
+        if(matchLastElement(ans, b[j])) // if this current element already exits in the arraylist
+          j++; // in this case we will not add any duplicate element to our ans list
         else 
-          ans.add(b[indx2++]); // add the element to our ans list
+          ans.add(b[j++]); // add the element to our ans list
       }
     }
 
-    while(indx1 < a.length) { // if any element left in 1st array
-      if(matchLastElement(ans, a[indx1])) // if this current element already exits in the arraylist
-        indx1++;
+    while(i < a.length) { // if any element left in 1st array
+      if(matchLastElement(ans, a[i])) // if this current element already exits in the arraylist
+        i++;
       else 
-        ans.add(a[indx1++]);
+        ans.add(a[i++]);
     }
 
-    while(indx2 < b.length) { // if any element left in 2nd array
-      if(matchLastElement(ans, b[indx2])) // if this current element already exits in the arraylist
-        indx2++;
+    while(j < b.length) { // if any element left in 2nd array
+      if(matchLastElement(ans, b[j])) // if this current element already exits in the arraylist
+        j++;
       else 
-        ans.add(b[indx2++]);
+        ans.add(b[j++]);
     }
 
     return ans;
