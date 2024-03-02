@@ -3,6 +3,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class _20_RotateArray{
+  // left rotate by k elements
   public static ArrayList<Integer> rotateArray(ArrayList<Integer> arr, int k) {
     Queue<Integer> q = new LinkedList<>();
 
@@ -23,6 +24,7 @@ public class _20_RotateArray{
     arr.add(2);
     arr.add(3);
     arr.add(4);
-    System.out.println(rotateArray(arr, 3));
+    arr.add(5);
+    System.out.println(rotateArray(arr, 2));
   }
 }
