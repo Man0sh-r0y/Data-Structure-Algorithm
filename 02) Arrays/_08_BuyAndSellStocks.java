@@ -1,4 +1,4 @@
-public class _08_Buy_Sell_Stocks {
+public class _08_BuyAndSellStocks {
 
     // LOGIC:
     // The goal is to find the maximum profit that can be obtained by buying and selling a stock given its daily prices.
@@ -12,22 +12,23 @@ public class _08_Buy_Sell_Stocks {
     // If the current stock price is higher than the buyPrice, calculate the profit that could be obtained by selling at the current price (price[i] - buyPrice).
     // Update the maxProfit if the calculated profit is greater than the current maximum profit.
 
-    public static int buy_sell_Stocks(int price[]) {
-        int buyPrice = Integer.MAX_VALUE, maxProfit = 0;
-        
-        for (int i = 0; i < price.length; i++) {
-            if (buyPrice < price[i]) {
-                int profit = price[i] - buyPrice;
-                maxProfit = Math.max(maxProfit, profit);
+    public static int maxProfit(int[] prices) {
+        int buyPrice = prices[0]; // At day 0, I'll buy the stock, as I on't any
+        int profit = 0; // initially profit is 0
+
+        for(int i=1; i<prices.length; i++) {
+            if(prices[i] < buyPrice) {// if current price is lesser than the price in which I previouly bought, then today again I have to buy, I can't sell as it will not make profit
+                buyPrice = prices[i]; // buy prices gets updated
             } else {
-                buyPrice = price[i];
+                profit = Math.max(profit, prices[i] - buyPrice); // if current price is greater than the price in which I previouly bought, then today I can sell, so I'll calculate the profit
             }
         }
-        return maxProfit;
+
+        return profit;
     }
 
     public static void main(String args[]) {
-        int price[] = { 7, 1, 5, 3, 6, 4 };
-        System.out.println("Max Profit is " + buy_sell_Stocks(price));
+        int[] prices = new int[]{7,1,5,3,6,4};
+        System.out.println(maxProfit(prices));
     }
 }
