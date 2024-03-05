@@ -1,6 +1,6 @@
-public class _27_LongestSubArray {
+public class _27_LongSubArrayOfSumK {
     
-    public static int longestSubArray(int[] arr, int k) {
+    public static int longestSubArray(int[] arr, int k) {// Sliding Window Approach
         int left = 0, right = 0; // left pointer, right pointer
         // initially both pointers are at 0th index
         int maxLen = 0, len = 0;

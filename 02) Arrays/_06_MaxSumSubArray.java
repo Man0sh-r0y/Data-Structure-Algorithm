@@ -71,6 +71,8 @@ public class _06_MaxSumSubArray {
             }
             maxSum = Math.max(currSum, maxSum);
         }
+        // if all the number are negative in the array, We will get empty subarray
+        // it will determine that we didn't get a subarray which will give the maximum sum
         return maxSum;
     }
 

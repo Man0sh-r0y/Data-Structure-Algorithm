@@ -1,5 +1,5 @@
 import java.util.HashMap;
-public class _26_LongSubArrayOfSumKPositives {
+public class _26_LongSubArrayOfSumK {
 
     public static int longestSubArray(int[] arr, long k) { // array may contains  positives and negetives number both
         HashMap<Long, Integer> map = new HashMap<>(); // to store the current sum and its index until that point
