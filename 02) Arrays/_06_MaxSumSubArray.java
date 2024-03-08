@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _06_MaxSumSubArray {
 
@@ -32,10 +32,16 @@ public class _06_MaxSumSubArray {
 
     public static int prefixSum(int arr[]) {
         int prefix[] = new int[arr.length];
-        prefix[0] = arr[0];
+        /*prefix[0] = arr[0];
         for (int i = 1; i < arr.length; i++) {
             prefix[i] = arr[i] + prefix[i - 1];// curruent element + previous sum
+        } */
+        int prefixSum = 0;
+        for(int i=0; i<arr.length; i++) {
+            prefixSum += arr[i];
+            prefix[i] = prefixSum;
         }
+
         int sum, maxSum = Integer.MIN_VALUE;
 
         // for each subarray, starting index is i and ending index is j
