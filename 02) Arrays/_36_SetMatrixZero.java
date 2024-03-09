@@ -4,10 +4,10 @@ import java.util.Arrays;
 public class _36_SetMatrixZero {
 
     public static void markRowCol(int[][] matrix, int i, int j) {
-        for(int row=0, col=j; row<matrix.length; row++) // set the whole row to 0
+        for(int row=0, col=j; row<matrix.length; row++) // set the whole col = j to 0
             matrix[row][col] = 0;
         
-        for(int row=i, col=0; col<matrix[row].length; col++) // set the whole column to 0
+        for(int row=i, col=0; col<matrix[row].length; col++) // set the whole row = i to 0
             matrix[row][col] = 0;
     }
 
