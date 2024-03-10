@@ -47,7 +47,6 @@ public class _41_MajorityElementMoreThan3Times {
 
     public static void main(String[] args) {
         int[] nums = new int[]{1,1,1,1,2,2,2,2,3};
-        int[] nums2 = new int[]{1,1,1,1,2,2,2,3,3};
-        System.out.println(majorityElement(nums2));
+        System.out.println(majorityElement(nums));
     }
 }
