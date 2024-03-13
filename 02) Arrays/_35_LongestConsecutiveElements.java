@@ -34,6 +34,8 @@ public class _35_LongestConsecutiveElements {
         Arrays.sort(arr);
 
         for(int i=0; i<arr.length; i++) {
+            if(i > 0 && arr[i] == arr[i-1])
+                continue;
             if(arr[i] - 1 == lastSmallest){
                 len++;// incrementing the length of the sequence
                 lastSmallest = arr[i];
@@ -73,7 +75,7 @@ public class _35_LongestConsecutiveElements {
 
     public static void main(String[] args) {
         int[] arr = new int[]{5, 1, 4, 3, 8, 2};
-        int[] arr2 = new int[]{100, 4, 200, 1, 3, 2};
+        int[] arr2 = new int[]{1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 5, 20};
         int[] arr3 = new int[]{100, 4, 200, 1, 3, 2};
         System.out.println(longestConsecutiveElements(arr));
         System.out.println(longestConsecutiveElements2(arr2));
