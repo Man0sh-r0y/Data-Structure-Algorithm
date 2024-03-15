@@ -34,6 +34,8 @@ public class _40_PascalsTraingle {
         return ans;
     }
 
+    // public static void printAnyRow
+
     public static void main(String[] args) {
         int n = 7;
         System.out.println(pascalsTriangle(n));

@@ -1,5 +1,3 @@
-import java.util.*;
-
 public class _05_SubArray {
 
     // CODE Part:
@@ -22,13 +20,12 @@ public class _05_SubArray {
     // Print each element of the subarray.
 
     public static void printSubArrays(int arr[]) {
-        // print subarrays
+        // print all possible subarrays
         for (int i = 0; i < arr.length; i++) {
             for (int j = i; j < arr.length; j++) {
                 for (int k = i; k <= j; k++) {
                     System.out.print(arr[k] + ",");
                 }
-                System.out.print("\b");
                 System.out.print("  ");
             }
             System.out.println();
@@ -36,15 +33,7 @@ public class _05_SubArray {
     }
 
     public static void main(String args[]) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter the size of the array: ");
-        int n = sc.nextInt();
-        int arr[] = new int[n];
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print("Enter the Element " + (i + 1) + ": ");
-            arr[i] = sc.nextInt();
-        }
+        int arr[] = new int[]{1, 2, 3, 4, 5};
         printSubArrays(arr);
-        sc.close();
     }
 }

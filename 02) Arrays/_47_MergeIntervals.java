@@ -48,10 +48,10 @@ public class _47_MergeIntervals {
             int end = intervals[i][1]; // end of the interval
             List<Integer> prevList = ansList.get(ansList.size() - 1);
 
-            if(prevList.get(1) >= start){
+            if(prevList.get(1) >= start){// merge two intervals
                 end = Math.max(end, prevList.get(1));
                 prevList.set(1, end);
-            } else {
+            } else {// add the independent interval
                 ansList.add(Arrays.asList(start, end));
             }
         }
