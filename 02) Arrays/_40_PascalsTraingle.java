@@ -34,10 +34,42 @@ public class _40_PascalsTraingle {
         return ans;
     }
 
-    // public static void printAnyRow
+    // print any number in Pascal's Traingle at given row and column
+    public static int getNumber(int row, int col) {
+        int ans = 1;
+
+        for(int i=0; i<col; i++) {
+            ans = ans * (row - i);
+            ans = ans / (i + 1);
+        }
+
+        return ans;
+    }
+
+    // Brute Force Method to generate any Nth row in Pascal's Traingle
+    public static void generateNthRow(int N) {
+        for(int i=0; i<=N; i++) {
+            System.out.print(getNumber(N, i) + " ");
+        }
+        System.out.println();
+    }
+
+    // Optimal Method to generate any Nth row in Pascal's Traingle
+    public static void generateNthRowOptimal(int N) {
+        int ans = 1;
+
+        for(int i=0; i<=N; i++) {
+            System.out.print(ans + " ");
+            ans = ans * (N - i);
+            ans = ans / (i + 1);
+        }
+    }
 
     public static void main(String[] args) {
         int n = 7;
         System.out.println(pascalsTriangle(n));
+        System.out.println(getNumber(6, 3));
+        generateNthRow(5);
+        generateNthRowOptimal(5);
     }
 }
