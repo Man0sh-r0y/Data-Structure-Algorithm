@@ -8,7 +8,7 @@ public class _02_LowerBound {
         while(low <= high) { 
             int mid = low + (high - low) / 2;  
             if(arr[mid] >= x) {
-                indx = Math.min(mid, indx);
+                indx = mid;
                 high = mid - 1;
             }
             else {

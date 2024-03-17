@@ -1,18 +1,16 @@
-public class _03_upperBound {
+public class _04_SearchInsertPosition {
 
-    public static int upperBound(int[] arr, int x) {
+    public static int searchInsertPos(int[] arr, int target) {
         int indx = arr.length;
 
         int low = 0, high = arr.length - 1;
 
         while(low <= high) {
             int mid = low + (high - low) / 2;
-
-            if(arr[mid] > x) {
-                indx = mid;
+            if(arr[mid] >= target) {
+                indx = Math.min(mid, indx);
                 high = mid - 1;
-            }
-            else {
+            } else {
                 low = mid + 1;
             }
         }
@@ -21,8 +19,7 @@ public class _03_upperBound {
     }
 
     public static void main(String[] args) {
-        int[] arr = new int[]{1, 4, 7, 8, 10};
-        int x = 7;
-        System.out.println(upperBound(arr, x));
+        int[] arr = new int[]{1,3,5,6};
+        System.out.println(searchInsertPos(arr, 2));
     }
 }
