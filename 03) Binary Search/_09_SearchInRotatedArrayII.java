@@ -2,8 +2,6 @@ public class _09_SearchInRotatedArrayII {
 
     // Search in Rotated Array (Array contains Duplicate element)
     public static boolean search(int[] arr, int target) {
-        int indx = -1;
-
         int low = 0, high = arr.length - 1;
 
         while(low <= high) {
