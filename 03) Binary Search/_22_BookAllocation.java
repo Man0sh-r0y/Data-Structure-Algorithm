@@ -1,6 +1,6 @@
 public class _22_BookAllocation {
 
-    public static int maxPagesAllocation(int[] books, int students, int maxPages) {
+    public static int maxPagesAllocation(int[] books, int maxPages) {
         int allocatedPages = 0, allocatedStudents = 1;
 
         for(int i=0; i<books.length; i++) {
@@ -33,7 +33,7 @@ public class _22_BookAllocation {
         }
 
         for(int i=minPages; i<=maxPages; i++) {
-            if(maxPagesAllocation(books, students, i) == students) {
+            if(maxPagesAllocation(books, i) == students) {
                 pages = i;
                 break;
             }
@@ -62,7 +62,7 @@ public class _22_BookAllocation {
         while(low <= high) {
             int mid = low + (high - low) / 2;
 
-            int studentsAllocated = maxPagesAllocation(books, students, mid);
+            int studentsAllocated = maxPagesAllocation(books, mid);
 
             if(studentsAllocated <= students){
                 pages = mid; 
@@ -77,10 +77,10 @@ public class _22_BookAllocation {
     }
 
     public static void main(String[] args) {
-        // int[] books = {25, 46, 28, 49, 24};
-        // int students = 4;
-        int[] books = new int[]{1, 17, 14, 9, 15, 9, 14 };
-        int students = 7;
+        int[] books = {25, 46, 28, 49, 24};
+        int students = 4;
+        // int[] books = new int[]{1, 17, 14, 9, 15, 9, 14 };
+        // int students = 7;
         System.out.println(placeBooks(books, students));
         System.out.println(placeBooks2ndApproach(books, students));
         //System.out.println(maxPagesAllocation(books, students, 17));
