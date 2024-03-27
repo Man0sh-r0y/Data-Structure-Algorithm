@@ -65,7 +65,7 @@ public class _22_BookAllocation {
             int studentsAllocated = maxPagesAllocation(books, mid);
 
             if(studentsAllocated <= students){
-                pages = mid; 
+                pages = mid;
                 high = mid - 1;
             }
             else {
