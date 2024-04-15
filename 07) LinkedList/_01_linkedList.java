@@ -14,7 +14,7 @@ public class _01_linkedList {
 
     public static Node head = null;
 
-    public Node addFirst(int data) {
+    public Node addFirst(Node head, int data) {
         if (head == null) {
             head = new Node(data);
             return head;
@@ -25,7 +25,7 @@ public class _01_linkedList {
         return head;
     }
 
-    public Node addLast(int data) {
+    public Node addLast(Node head,int data) {
         if (head == null) {
             head.data = data;
             head.next = null;
@@ -41,7 +41,7 @@ public class _01_linkedList {
         return head;
     }
 
-    public Node deleteFirst() {
+    public Node deleteFirst(Node head) {
         if (head == null) {
             System.out.println("LinkedList is Empty.");
             return null;
@@ -150,9 +150,11 @@ public class _01_linkedList {
                     break;
                 case 7:
                     System.out.println("Size of LinkedList is " + ll.getSize());
-                case 8:
-                    sc.close();
-                    System.exit(0);
+                    break;
+                 case 8:
+                     sc.close();
+                     System.exit(0);
+                     break;
                 default:
                     System.out.println("Invaild Input");
                     break;
