@@ -1,6 +1,6 @@
 public class _08_CircularLinkedList {
 
-    static class Node {
+    class Node {
         int data;
         Node next;
 
@@ -13,19 +13,21 @@ public class _08_CircularLinkedList {
     public static Node head = null;
     public static Node tail = null;
 
-    public static void addFast(int data) {
+    public void addFirst(int data) {
         Node newNode = new Node(data);
+
         if (head == null) {
             head = tail = newNode;
             tail.next = head;
             return;
         }
+        
         newNode.next = head;
         head = newNode;
         tail.next = head;
     }
 
-    public static void addLast(int data) {
+    public void addLast(int data) {
         Node newNode = new Node(data);
         if (head == null) {
             head = tail = newNode;
@@ -37,7 +39,7 @@ public class _08_CircularLinkedList {
         tail = newNode;
     }
 
-    public static void addAfterNode(int data, int nodeData) {
+    public void addAfterNode(int data, int nodeData) {
         Node newNode = new Node(data);
         if (head == null) {
             head = tail = newNode;
@@ -57,7 +59,7 @@ public class _08_CircularLinkedList {
         System.out.println(nodeData + " not present in LinkedList");
     }
 
-    public static void deleteFirst() {
+    public void deleteFirst() {
         if (head == null) {
             System.out.println("LinkedList is Empty");
             return;
@@ -70,7 +72,7 @@ public class _08_CircularLinkedList {
         tail.next = head;
     }
 
-    public static void deleteLast() {
+    public void deleteLast() {
         if (head == null) {
             System.out.println("LinkedList is Empty");
             return;
@@ -87,7 +89,7 @@ public class _08_CircularLinkedList {
         tail.next = head;
     }
 
-    public static void traverse() {
+    public void traverse() {
         if (head == null) {
             System.out.println("LinkedList is Empty");
             return;
@@ -101,17 +103,22 @@ public class _08_CircularLinkedList {
     }
 
     public static void main(String[] args) {
-        addFast(2);
-        addFast(1);
-        addFast(0);
-        addLast(3);
-        addLast(4);
-        addLast(5);
-        traverse();
-        deleteFirst();
-        deleteLast();
-        traverse();
-        addAfterNode(7, 3);
-        traverse();
+        _08_CircularLinkedList ll = new _08_CircularLinkedList();
+        
+        ll.addFirst(0);
+
+        for (int i = 1; i <= 6; i++)
+            ll.addLast(i);
+
+        ll.traverse();
+
+        ll.deleteFirst();
+        ll.deleteLast();
+
+        ll.traverse();
+
+        ll.addAfterNode(2, 2);
+
+        ll.traverse();
     }
 }

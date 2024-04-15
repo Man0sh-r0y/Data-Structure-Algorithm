@@ -12,106 +12,128 @@ public class _09_DoublyLinkedList {
         }
     }
 
-    public static Node head = null;
-
-    public void addFirst(int data) {
+    public Node addFirst(Node head, int data) {
         if (head == null) {
             head = new Node(data);
-            return;
+            return head;
         }
         Node newNode = new Node(data);
         newNode.next = head;
         newNode.prev = null;
         head = newNode;
+
+        return head;
     }
 
-    public void addLast(int data) {
+    public Node addLast(Node head, int data) {
         if (head == null) {
             head = new Node(data);
-            return;
+            return head;
         }
+
         Node temp = head;
-        while (temp.next != null) {
+
+        while (temp.next != null) 
             temp = temp.next;
-        }
+
         Node newNode = new Node(data);
         temp.next = newNode;
         newNode.prev = temp;
         newNode.next = null;
+
+        return head;
     }
 
-    public void removeFirst() {
+    public Node removeFirst(Node head) {
         if (head == null) {
             System.out.println("LinkedList is Empty");
-            return;
+            return null;
         }
-        if (head.next == null) {
-            head = null;
-            return;
-        }
+        
         head = head.next;
         head.prev = null;
+
+        return head;
     }
 
-    public void removeLast() {
+    public Node removeLast(Node head) {
         if (head == null) {
             System.out.println("LinkedList is Empty");
-            return;
+            return null;
         }
         if (head.next == null) {
             head = null;
-            return;
+            return head;
         }
+
         Node temp = head;
-        while (temp.next.next != null) {
+
+        while (temp.next.next != null) 
             temp = temp.next;
-        }
+        
         temp.next.prev = null;
         temp.next = null;
+
+        return head;
     }
 
-    public void reverse() {
+    public Node reverse(Node head) {
+        if (head == null || head.next == null) 
+            return head;
+
         Node curr = head;
         Node prev = null;
         Node next;
+
         while (curr != null) {
             next = curr.next;
+
             curr.next = prev;
             curr.prev = next;
+
             prev = curr;
             curr = next;
         }
         head = prev;
+
+        return head;
     }
 
-    public void printLinkedList() {
+    public void printLinkedList(Node head) {
         if (head == null) {
             System.out.println("LinkedList is Empty");
             return;
         }
+
         Node temp = head;
         System.out.print("null <=> ");
+
         while (temp != null) {
             System.out.print(temp.data + " <=> ");
             temp = temp.next;
         }
+
         System.out.println("null");
     }
 
     public static void main(String[] args) {
         _09_DoublyLinkedList ll = new _09_DoublyLinkedList();
-        ll.addFirst(1);
-        ll.addFirst(0);
-        ll.addLast(2);
-        ll.addLast(3);
-        ll.addLast(4);
-        ll.addLast(5);
-        ll.addLast(6);
-        ll.printLinkedList();
-        ll.removeFirst();
-        ll.removeLast();
-        ll.printLinkedList();
-        ll.reverse();
-        ll.printLinkedList();
+        Node head = null;
+
+        head = ll.addFirst(head, 0);
+
+        for(int i=1; i<=6; i++)
+            head = ll.addLast(head, i);
+
+        ll.printLinkedList(head);
+    
+        head = ll.removeFirst(head);
+        head = ll.removeLast(head);
+
+        ll.printLinkedList(head);
+
+        head = ll.reverse(head);
+        
+        ll.printLinkedList(head);
     }
 }
