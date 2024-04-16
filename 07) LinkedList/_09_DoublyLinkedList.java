@@ -78,23 +78,26 @@ public class _09_DoublyLinkedList {
     }
 
     public Node reverse(Node head) {
-        if (head == null || head.next == null) 
+        if (head == null || head.next == null)
             return head;
 
-        Node curr = head;
-        Node prev = null;
-        Node next;
+        Node currNode = head; // head is the current node
+        Node prev = null, next = null;
 
-        while (curr != null) {
-            next = curr.next;
+        while(currNode != null) {
+            prev = currNode.prev;
+            next = currNode.next;
 
-            curr.next = prev;
-            curr.prev = next;
+            // swap Current Node's prev and next
+            currNode.prev = next;
+            currNode.next = prev;
 
-            prev = curr;
-            curr = next;
+            // update the prev and currentNode to move to the next node
+            prev = currNode;
+            currNode = next;
         }
-        head = prev;
+
+        head = prev; // when currNode is null then the while loop will be terminated, so the prev node will be the head
 
         return head;
     }

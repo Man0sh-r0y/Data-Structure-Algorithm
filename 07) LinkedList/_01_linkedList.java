@@ -94,9 +94,8 @@ public class _01_linkedList {
         if (head == null || head.next == null) 
             return head;
         
-        Node prev = null;
         Node curr = head;
-        Node next = null;
+        Node prev = null, next = null;
 
         while (curr != null) {
             next = curr.next;
