@@ -1,3 +1,4 @@
+import java.util.*;
 public class _06_MergeSort {
     public static void printArr(int arr[]) {
         for (int i = 0; i < arr.length; i++) {
@@ -6,54 +7,48 @@ public class _06_MergeSort {
         System.out.println();
     }
 
-    public static void mergeSort(int arr[], int si, int ei) {
-        if (si >= ei) {
+    public static void mergeSort(int arr[], int low, int high) {
+        if (low >= high) 
             return;
-        }
 
-        int mid = si + (ei - si) / 2;// (si + ei)/2
-        mergeSort(arr, si, mid);// left part
-        mergeSort(arr, mid + 1, ei);// right part
-        merge(arr, si, mid, ei);
+        int mid = low + (high - low) / 2;// (low + high)/2
+        mergeSort(arr, low, mid);// left part
+        mergeSort(arr, mid + 1, high);// right part
+        merge(arr, low, mid, high); // merge 
     }
 
-    public static void merge(int arr[], int si, int mid, int ei) {
-        // left(0,3)=4 right(4,6)=3 --> 6-0+1--> 7
-        int temp[] = new int[ei - si + 1];
-        int i = si;// iterator for left
-        int j = mid + 1;// iterator for right
-        int k = 0;// iterator for temp arr
+    public static void merge(int arr[], int low, int mid, int high) {
+        int temp[] = new int[high - low + 1];
+        int i = low;// iterator for left (left pointer)
+        int j = mid + 1;// iterator for right (right pointer)
+        int k = 0;// iterator for temp arrat
 
-        while (i <= mid && j <= ei) {
-            if (arr[i] < arr[j]) {
-                temp[k] = arr[i];
-                i++;
-                k++;
-            } else {
-                temp[k] = arr[j];
-                j++;
-                k++;
-            }
+        while (i <= mid && j <= high) {
+            if (arr[i] < arr[j]) 
+                temp[k++] = arr[i++];
+            else 
+                temp[k++] = arr[j++];
         }
-        // left over elements
-        // if from any sides elements rem
-        // left part
-        while (i <= mid) {
+
+        // if any elements still left in the left part of the array
+        while (i <= mid) 
             temp[k++] = arr[i++];
-        }
-        // right part
-        while (j <= ei) {
+
+        // if any elements still left in the right part of the array
+        while (j <= high) 
             temp[k++] = arr[j++];
-        }
-        // copy temp to original arr
-        for (k = 0, i = si; k < temp.length; k++, i++) {
-            arr[i] = temp[k];
+        
+        // copy temp array to original array
+        i = low; // reset the value
+        k = 0; // reset the value
+        while(k < temp.length) {
+            arr[i++] = temp[k++];
         }
     }
 
     public static void main(String args[]) {
-        int arr[] = { 6, 3, 9, 5, 2, 8, -2 };
+        int arr[] = new int[]{ 6, 3, 9, 5, 2, 8, -2 };
         mergeSort(arr, 0, arr.length - 1);
-        printArr(arr);
+        System.out.println(Arrays.toString(arr));
     }
 }

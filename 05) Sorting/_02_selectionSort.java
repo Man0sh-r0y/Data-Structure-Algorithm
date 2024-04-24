@@ -4,17 +4,19 @@ public class _02_selectionSort {
         int n = arr.length;
         for (int i = 0; i < n - 1; i++) {
             int minIndex = i;// We assume our min index as current index
-            for (int j = i + 1; j < n; j++) {
-                if (arr[minIndex] > arr[j]) {
-                    minIndex = j;
-                }
-            }
-            if (minIndex != i) {
-                int temp = arr[minIndex];
-                arr[minIndex] = arr[i];
-                arr[i] = temp;
-            }
+            for (int j = i + 1; j < n; j++) 
+                if (arr[minIndex] > arr[j]) // finding the minimum element
+                    minIndex = j; // store the minimum element's index
+            
+            if (minIndex != i) 
+                swap (arr, i, minIndex);
         }
+    }
+
+    public static void swap (int[] arr, int i, int j) {
+        int temp = arr[j];
+        arr[j] = arr[i];
+        arr[i] = temp;
     }
 
     public static void printArray(int arr[]) {
