@@ -91,23 +91,25 @@ public class _01_linkedList {
     }
 
     public Node reverse(Node head) {
-        if (head == null || head.next == null) 
+        if (head == null || head.next == null)
             return head;
         
+        // reverse the direction of the Next for each node
+        Node prev = null;
         Node curr = head;
-        Node prev = null, next = null;
+        Node next = null;
 
-        while (curr != null) {
+        while(curr != null) {
             next = curr.next;
-            
-            curr.next = prev; // reverse 
+            curr.next = prev; // reverse the directionof the next
 
             prev = curr;
             curr = next;
         }
 
-        head = prev;
-
+        head = prev; // when curr will be null, loop will be termintaed
+        // then the prev will be the new head
+        
         return head;
     }
 

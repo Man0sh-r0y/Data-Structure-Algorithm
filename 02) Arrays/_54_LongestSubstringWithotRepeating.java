@@ -14,8 +14,10 @@ public class _54_LongestSubstringWithotRepeating {
                     set.remove(str.charAt(l));
                     l++;
                 }
+            } else {
+                set.add(str.charAt(r));
             }
-            set.add(str.charAt(r));
+            
             maxLen = Math.max(maxLen, r - l + 1);
         }
 
