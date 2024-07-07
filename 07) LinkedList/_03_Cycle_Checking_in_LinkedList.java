@@ -11,17 +11,18 @@ public class _03_Cycle_Checking_in_LinkedList {
     }
 
     public static boolean cycleChecking(Node head) {
-        Node temp = head;
-        Node slow = head;
-        Node fast = head;
-        while (temp != null) {
+        Node slow = head; // slow pointer
+        Node fast = head; // fast pointer
+
+        while (slow != null && fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
-            if (slow == fast) {
+            head = head.next;
+
+            if (slow == fast)
                 return true;
-            }
-            temp = temp.next;
         }
+
         return false;
     }
 
