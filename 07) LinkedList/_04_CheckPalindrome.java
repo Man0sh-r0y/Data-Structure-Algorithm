@@ -38,33 +38,40 @@ public class _04_CheckPalindrome {
         }
 
         public boolean CheckPalindrome() {
-            if (head == null || head.next == null) {
+            if (head == null || head.next == null) 
                 return true;
-            }
+
             // getting mid Node
             Node slow = head;
             Node fast = head;
+
             while (fast != null && fast.next != null) {
                 slow = slow.next;
                 fast = fast.next.next;
             }
+            
             Node mid = slow;
+
             // reverse 2nd half
             Node curr = mid;
             Node prev = null;
             Node next;
+
             while (curr != null) {
                 next = curr.next;
                 curr.next = prev;
                 prev = curr;
                 curr = next;
             }
-            Node rightHead = prev;
-            Node leftHead = head;
+
+            // now compare both the half
+            Node rightHead = prev; // head of the right half list
+            Node leftHead = head; // head of the left halve list
+            
             while (rightHead != null) {
-                if (leftHead.data != rightHead.data) {
+                if (leftHead.data != rightHead.data) 
                     return false;
-                }
+    
                 leftHead = leftHead.next;
                 rightHead = rightHead.next;
             }
