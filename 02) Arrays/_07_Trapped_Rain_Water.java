@@ -12,7 +12,7 @@ public class _07_Trapped_Rain_Water {
     // 5. The water level at each position will be the minimum of the leftMax and rightMax. (min(leftMax, rightMax))
     // 6. The water trapped at each position will be the difference between the water level and the height of the bar at that position. (min(leftMax, rightMax) - height[i])
 
-    public static int trappedWater(int height[]) {
+    public static int trappedWater(int height[]) { // Time Complexiety: O(N) and Space Complexiety: O(N)
         int n = height.length;
         int leftMax[] = new int[n];// left boundary
         int rightMax[] = new int[n];// right boundary
