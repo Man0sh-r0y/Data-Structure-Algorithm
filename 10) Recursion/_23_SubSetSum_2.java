@@ -6,24 +6,24 @@ public class _23_SubSetSum_2 {
         System.out.println(ans.toString().replace(",", " "));
     }
 
-    public static void fun(int[] nums, int index, List<Integer> ds, HashSet<String> res) {
+    public static void findSubsets(int[] nums, int index, List<Integer> list, HashSet<String> set) {
         if (index == nums.length) {
-            Collections.sort(ds);
-            res.add(ds.toString());
+            Collections.sort(list);
+            set.add(list.toString());
             return;
         }
-        ds.add(nums[index]);
-        fun(nums, index + 1, ds, res);
-        ds.remove(ds.size() - 1);
-        fun(nums, index + 1, ds, res);
+        list.add(nums[index]);
+        findSubsets(nums, index + 1, list, set);
+        list.remove(list.size() - 1);
+        findSubsets(nums, index + 1, list, set);
     }
 
-    public static List<String> subsetsWithDup(int[] nums) {
+    public static List<String> subsetsWithoutDup(int[] nums) {
         List<String> ans = new ArrayList<>();
-        HashSet<String> res = new HashSet<>();
-        List<Integer> ds = new ArrayList<>();
-        fun(nums, 0, ds, res);
-        for (String it : res) {
+        HashSet<String> set = new HashSet<>();
+        List<Integer> list = new ArrayList<>();
+        findSubsets(nums, 0, list, set);
+        for (String it : set) {
             ans.add(it);
         }
         return ans;
@@ -31,8 +31,17 @@ public class _23_SubSetSum_2 {
 
     public static void main(String args[]) {
         int nums[] = { 1, 2, 2 };
-        List<String> ans = subsetsWithDup(nums);
+        //int[] nums = new int[]{1, 2, 2, 2, 3, 3};
+        List<String> ans = subsetsWithoutDup(nums);
         printAns(ans);
+
+        ArrayList<ArrayList<String>> ans2 = new ArrayList<>();
+        ArrayList<String> list2 = new ArrayList<>();
+        ans2.add(list2);
+        ans2.add(list2);
+        System.out.println(ans2);
+        list2.add("2");
+        System.out.println(ans2);
 
     }
 
