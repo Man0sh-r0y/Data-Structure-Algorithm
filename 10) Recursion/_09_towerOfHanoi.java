@@ -10,7 +10,7 @@ public class _09_towerOfHanoi {
     }
 
     public static void main(String[] args) {
-        int n = 4;
+        int n = 3;
 
         TowerOfHanoi(n, 'A', 'B', 'C');
     }
