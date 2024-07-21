@@ -1,48 +1,29 @@
 import java.util.*;
 
 public class _23_SubSetSum_2 {
-    static void printAns(List<String> ans) {
-        System.out.println("The unique subsets are ");
-        System.out.println(ans.toString().replace(",", " "));
+    private static void findSubsets(int indx, int[] nums, List<Integer> subsets, List<List<Integer>> ans) {
+        ans.add(new ArrayList<>(subsets));
+
+        for(int i=indx; i<nums.length; i++) {
+            if(i>indx && nums[i] == nums[i-1]) continue;
+            System.out.println("indx = " + indx + " nums[indx] = " + nums[indx]);
+
+            subsets.add(nums[i]); // pick the element
+            findSubsets(i+1, nums, subsets, ans);
+            subsets.remove(subsets.size()-1); // backtrack
+        }
     }
 
-    public static void findSubsets(int[] nums, int index, List<Integer> list, HashSet<String> set) {
-        if (index == nums.length) {
-            Collections.sort(list);
-            set.add(list.toString());
-            return;
-        }
-        list.add(nums[index]);
-        findSubsets(nums, index + 1, list, set);
-        list.remove(list.size() - 1);
-        findSubsets(nums, index + 1, list, set);
-    }
-
-    public static List<String> subsetsWithoutDup(int[] nums) {
-        List<String> ans = new ArrayList<>();
-        HashSet<String> set = new HashSet<>();
-        List<Integer> list = new ArrayList<>();
-        findSubsets(nums, 0, list, set);
-        for (String it : set) {
-            ans.add(it);
-        }
+    public static List<List<Integer>> subsetsWithDup(int[] nums) {
+        List<List<Integer>> ans = new ArrayList<>();
+        List<Integer> subsets = new ArrayList<>();
+        Arrays.sort(nums);
+        findSubsets(0, nums, subsets, ans);
         return ans;
     }
 
-    public static void main(String args[]) {
-        int nums[] = { 1, 2, 2 };
-        //int[] nums = new int[]{1, 2, 2, 2, 3, 3};
-        List<String> ans = subsetsWithoutDup(nums);
-        printAns(ans);
-
-        ArrayList<ArrayList<String>> ans2 = new ArrayList<>();
-        ArrayList<String> list2 = new ArrayList<>();
-        ans2.add(list2);
-        ans2.add(list2);
-        System.out.println(ans2);
-        list2.add("2");
-        System.out.println(ans2);
-
+    public static void main(String[] args) {
+        System.out.println(subsetsWithDup(new int[]{1,1, 2, 2}));
     }
 
 }
