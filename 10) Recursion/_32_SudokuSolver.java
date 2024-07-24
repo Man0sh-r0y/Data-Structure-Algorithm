@@ -2,19 +2,18 @@ public class _32_SudokuSolver {
     public static int k = 1;
 
     public static boolean solveSudoku(int sudoku[][], int row, int col) {
-        if (row >= sudoku.length - 1) {
+        if (row >= sudoku.length) {
             return true;
         }
         // System.out.println("row= " + row + " col= " + col); //for decode purpose I'll
         // use it
 
         if (col == sudoku[0].length) {
-            row += 1;
-            col = 0;
+            return solveSudoku(sudoku, row + 1, 0);
         }
 
-        if (sudoku[row][col] != 0) {
-            return solveSudoku(sudoku, row, col + 1);
+        if (sudoku[row][col] != 0) { // if not empty cell
+            return solveSudoku(sudoku, row, col + 1); // checking for next column
         }
 
         for (int digit = 1; digit <= 9; digit++) {
@@ -40,7 +39,7 @@ public class _32_SudokuSolver {
     }
 
     public static boolean isSafe(int sudoku[][], int row, int col, int digit) {
-        for (int i = 0; i < 9; i++) {
+        for (int i = 0; i < 9; i++) { // as soduku board length is from 0 to 8 (row and column)
             // column checking
             if (sudoku[row][i] == digit)
                 return false;
@@ -61,15 +60,27 @@ public class _32_SudokuSolver {
     }
 
     public static void main(String[] args) {
-        int sudoku[][] = { { 0, 0, 8, 0, 0, 0, 0, 0, 0 },
-                { 4, 9, 0, 1, 5, 7, 0, 0, 2 },
-                { 0, 0, 3, 0, 0, 4, 1, 9, 0 },
-                { 1, 8, 5, 0, 6, 0, 0, 2, 0 },
-                { 0, 0, 0, 0, 2, 0, 0, 6, 0 },
-                { 9, 6, 0, 4, 0, 5, 3, 0, 0 },
-                { 0, 3, 0, 0, 7, 2, 0, 0, 4 },
-                { 0, 4, 9, 0, 3, 0, 0, 5, 7 },
-                { 8, 2, 7, 0, 0, 9, 0, 1, 3 } };
+        // int sudoku[][] = { { 0, 0, 8, 0, 0, 0, 0, 0, 0 },
+        //         { 4, 9, 0, 1, 5, 7, 0, 0, 2 },
+        //         { 0, 0, 3, 0, 0, 4, 1, 9, 0 },
+        //         { 1, 8, 5, 0, 6, 0, 0, 2, 0 },
+        //         { 0, 0, 0, 0, 2, 0, 0, 6, 0 },
+        //         { 9, 6, 0, 4, 0, 5, 3, 0, 0 },
+        //         { 0, 3, 0, 0, 7, 2, 0, 0, 4 },
+        //         { 0, 4, 9, 0, 3, 0, 0, 5, 7 },
+        //         { 8, 2, 7, 0, 0, 9, 0, 1, 3 } };
+        int[][] sudoku = new int[][] {
+            {5, 3, 0, 0, 7, 0, 0, 0, 0},
+            {6, 0, 0, 1, 9, 5, 0, 0, 0},
+            {0, 9, 8, 0, 0, 0, 0, 6, 0},
+            {8, 0, 0, 0, 6, 0, 0, 0, 3},
+            {4, 0, 0, 8, 0, 3, 0, 0, 1},
+            {7, 0, 0, 0, 2, 0, 0, 0, 6},
+            {0, 6, 0, 0, 0, 0, 2, 8, 0},
+            {0, 0, 0, 4, 1, 9, 0, 0, 5},
+            {0, 0, 0, 0, 8, 0, 0, 7, 9}
+        };
+        
 
         if (solveSudoku(sudoku, 0, 0)) {
             printSudoku(sudoku);
