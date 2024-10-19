@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Stack;
 
-public class _18_NextSmallerElement {
+public class _19_NextSmallerElement {
 
     public static int[] prevSmaller(int[] arr) {
         int[] ans = new int[arr.length];
